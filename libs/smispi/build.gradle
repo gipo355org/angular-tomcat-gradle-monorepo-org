@@ -1,0 +1,233 @@
+plugins {
+	id 'java-library'
+
+	id 'jacoco'
+
+	id 'com.diffplug.spotless' version '6.25.0'
+
+	id 'groovy'
+
+	id 'maven-publish'
+
+	id "com.vanniktech.maven.publish" version "0.28.0"
+
+	id 'checkstyle'
+
+	id 'org.openrewrite.rewrite' version '6.16.0'
+
+	id "com.github.spotbugs" version "6.0.17"
+
+	id "name.remal.sonarlint" version "4.2.3"
+
+	id 'info.solidsoft.pitest' version '1.15.0'
+}
+
+
+dependencies {
+	rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.9.0")
+
+	rewrite("org.openrewrite.recipe:rewrite-java-security:2.9.0")
+
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+
+	api 'org.slf4j:slf4j-api:2.0.13'
+}
+
+repositories {
+	mavenCentral()
+}
+
+// ./gradlew -Pversion=${version} publish will set the version when publishing
+
+def customGroupID = 'io.github.gipo999'
+def customGithubRepository = 'smispi'
+def customGithubOwner = 'gipo999'
+def customArtifactID = 'smispi'
+def customProjectDescription = 'Generic SPI'
+def customInceptionYear = '2024'
+def customBuildLicense = 'MIT'
+def custmoLicenseURL = 'https://opensource.org/licenses/MIT'
+def customMavenUsername = System.getenv('MAVEN_USERNAME')
+def customMavenPassword = System.getenv('MAVEN_PASSWORD')
+def customSigningKey = System.getenv('GPG_PRIVATE')
+def customSigningPublicKey = System.getenv('GPG_PUBLIC')
+def customSigningPassword = System.getenv('GPG_PASSWORD')
+def customGithubToken = System.getenv('GITHUB_TOKEN')
+def customGithubActor = System.getenv('GITHUB_ACTOR')
+
+group = customGroupID
+
+// ### CHECKSTYLE
+checkstyle {
+	toolVersion '10.17.0'
+
+	ignoreFailures = false
+
+	maxWarnings = 0
+}
+
+// ### REWRITE
+rewrite {
+	activeRecipe("org.openrewrite.staticanalysis.CodeCleanup")
+
+	activeRecipe("org.openrewrite.java.security.PartialPathTraversalVulnerability")
+
+	activeRecipe("org.openrewrite.java.security.JavaSecurityBestPractices")
+
+	activeRecipe("org.openrewrite.java.security.RegularExpressionDenialOfService")
+}
+
+// ### PIT
+pitest {
+	junit5PluginVersion = '1.2.1'
+
+	pitestVersion = '1.15.2'
+}
+
+// ## JACOCO report for test coverage and codecov
+test {
+	finalizedBy jacocoTestReport
+
+	useJUnitPlatform()
+}
+
+jacocoTestReport {
+	dependsOn test
+
+	reports {
+		xml.required = true
+	}
+}
+
+// ### SPOTLESS
+spotless {
+	format 'misc', {
+		target '*.gradle', '.gitattributes', '.gitignore'
+
+		targetExclude 'build/**/*', 'node_modules/**/*', 'target/**/*', 'out/**/*', 'dist/**/*', 'bin/**/*'
+
+		trimTrailingWhitespace()
+
+		indentWithTabs()
+
+		endWithNewline()
+	}
+
+	format 'xml', {
+		target '**/*.xml'
+
+		targetExclude 'build/**/*', 'node_modules/**/*', 'target/**/*', 'out/**/*', 'dist/**/*', 'bin/**/*'
+
+		eclipseWtp('xml')
+	}
+
+	format 'styling', {
+		targetExclude 'build/**/*', 'node_modules/**/*', 'target/**/*', 'out/**/*', 'dist/**/*', 'bin/**/*'
+
+		target  '**/*.json', '**/*.yaml', '**/*.toml', '**/*.js', '**/*.cjs', '**/*.mjs'
+
+		prettier(['prettier-plugin-toml': '2.0.1']).config(['plugins': ['prettier-plugin-toml']])
+	}
+
+	groovy {
+		importOrder()
+
+		removeSemicolons()
+
+		greclipse()
+
+		// Add a license header to all files
+		// licenseHeader('/* (C) $YEAR */') // or licenseHeaderFile
+	}
+
+	groovyGradle {
+		target '*.gradle'
+
+		targetExclude 'build/**/*', 'node_modules/**/*', 'target/**/*', 'out/**/*', 'dist/**/*', 'bin/**/*'
+
+		greclipse()
+	}
+
+	java {
+		importOrder()
+
+		removeUnusedImports()
+
+		cleanthat()
+
+		trimTrailingWhitespace()
+
+		endWithNewline()
+
+		googleJavaFormat()
+
+		formatAnnotations()
+
+		// licenseHeader '/* (C) $YEAR */' // or licenseHeaderFile
+	}
+}
+
+import com.vanniktech.maven.publish.SonatypeHost
+mavenPublishing {
+	publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+
+	signAllPublications()
+
+	coordinates(customGroupID, customArtifactID, version)
+
+	pom {
+		name = customArtifactID
+
+		description = customProjectDescription
+
+		inceptionYear = customInceptionYear
+
+		url = 'https://github.com/' + customGithubOwner + '/' + customGithubRepository
+
+		licenses {
+			license {
+				name = customBuildLicense
+
+				url = custmoLicenseURL
+			}
+		}
+
+		developers {
+			developer {
+				id = customGithubOwner
+
+				name = customGithubOwner
+			}
+		}
+
+		scm {
+			connection = 'scm:git:https://github.com/' + customGithubOwner + '/' + customGithubRepository + '.git'
+
+			developerConnection = 'scm:git:ssh://github.com/' + customGithubOwner + '/' + customGithubRepository + '.git'
+
+			url = 'http://github.com/' + customGithubOwner + '/' + customGithubRepository
+		}
+	}
+}
+
+publishing {
+	repositories {
+		maven {
+			name = "GitHubPackages"
+
+			url = "https://maven.pkg.github.com/gipo999/smispi"
+
+			credentials {
+				username = customGithubActor
+
+				password = customGithubToken
+			}
+		}
+	}
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}

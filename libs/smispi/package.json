@@ -1,0 +1,32 @@
+{
+  "name": "test-spi",
+  "version": "0.0.1",
+  "description": "test-spi",
+  "scripts": {
+    "commit": "git cz",
+    "prepare": "node scripts/install-hooks.cjs",
+    "commitlint": "commitlint --edit",
+    "format": "node scripts/gradlew.cjs --format",
+    "lint": "node scripts/gradlew.cjs --lint",
+    "build": "node scripts/gradlew.cjs --build",
+    "generate-docs": "javadoc -d javadocs -sourcepath src/main/java -subpackages net"
+  },
+  "keywords": [],
+  "author": "gipo999",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "cz-git": "1.9.3",
+    "prettier": "3.3.2",
+    "prettier-plugin-toml": "2.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "packageManager": "npm@10.8.1"
+}
