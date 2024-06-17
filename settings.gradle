@@ -10,9 +10,3 @@ rootProject.name = 'angular-tomcat-gradle-monorepo'
 include 'smispi'
 include 'tomcat-webapp-boilerplate'
 
-allprojects {
-  apply {
-      plugin("project-report")
-  }
-}
-

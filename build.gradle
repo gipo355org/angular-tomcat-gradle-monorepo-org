@@ -5,7 +5,7 @@
  * To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.8/samples
  */
 
-allprojects {
+allprojects {
   apply {
       plugin("project-report")
   }

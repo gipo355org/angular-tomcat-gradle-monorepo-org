@@ -1,5 +1,5 @@
 {
-  "name": "dev",
+  "name": "tomcat-webapp-boilerplate",
   "version": "1.0.0",
   "description": "working with `./gradlew war`",
   "main": "index.js",
