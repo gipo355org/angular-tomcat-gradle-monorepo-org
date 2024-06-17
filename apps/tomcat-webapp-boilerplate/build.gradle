@@ -93,6 +93,8 @@ repositories {
 // def _artifactID = 'rest.base'
 // def _mainClass = 'App'
 
+group = 'io.github.gipo999'
+
 // ### CHECKSTYLE
 checkstyle {
 	toolVersion '10.17.0'
