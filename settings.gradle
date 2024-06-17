@@ -7,6 +7,6 @@
 
 rootProject.name = 'angular-tomcat-gradle-monorepo'
 
-include 'smispi'
-include 'tomcat-webapp-boilerplate'
+include ':libs:smispi'
+include ':apps:tomcat-webapp-boilerplate'
 
