@@ -1,4 +1,4 @@
-# AngularTomcatGradleMonorepoFixed
+# AngularTomcatGradleMonorepo
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
@@ -40,7 +40,7 @@ npx nx run-many -t <target1> <target2> -p <proj1> <proj2>
 
 Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/features/run-tasks).
 
-## Set up CI!
+## Set up CI
 
 Nx comes with local caching already built-in (check your `nx.json`). On CI you might want to go a step further.
 
@@ -55,7 +55,7 @@ It will show tasks that you can run with Nx.
 
 - [Learn more about Exploring the Project Graph](https://nx.dev/core-features/explore-graph)
 
-## Connect with us!
+## Connect with us
 
 - [Join the community](https://nx.dev/community)
 - [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)

@@ -1,4 +1,4 @@
-rootProject.name = 'angular-tomcat-gradle-monorepo-fixed'
+rootProject.name = 'angular-tomcat-gradle-monorepo'
 
 // include 'library'
 // include 'application'
