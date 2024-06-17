@@ -2,12 +2,20 @@
 root = true
 
 [*]
-charset = utf-8
 indent_style = space
 indent_size = 2
-insert_final_newline = true
+end_of_line = lf
+charset = utf-8
 trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 80
+
+[*.js,*.ts,*.jsx,*.tsx]
+quote_type = single
+
+[*.json,*.yml,*.yaml]
+quote_type = double
 
 [*.md]
-max_line_length = off
-trim_trailing_whitespace = false
+max_line_length = 80
+trim_trailing_whitespace = true
