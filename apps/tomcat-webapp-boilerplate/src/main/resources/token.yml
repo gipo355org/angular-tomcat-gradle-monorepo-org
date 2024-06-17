@@ -1,0 +1,5 @@
+hmacSha512Key:
+clientId:
+clientSecret:
+issuer: xxx
+validity: 1

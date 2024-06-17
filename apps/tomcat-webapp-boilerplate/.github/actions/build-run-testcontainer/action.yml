@@ -1,0 +1,45 @@
+# Composite private action to build, run and test a Docker container
+# Will have to respond to the health check endpoint
+name: Build, Run and Test Docker Container
+inputs:
+  load:
+    description: "Load the Docker image."
+    required: false
+    default: false
+  push:
+    description: "Push the Docker image."
+    required: false
+    default: false
+  docker_tag:
+    description: "The tags for the Docker image."
+    required: true
+  port_maps:
+    description: "The port to expose the Docker image."
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Build and export to docker
+      uses: docker/build-push-action@ca052bb54ab0790a636c9b5f226502c73d547a25 # v5
+      with:
+        push: ${{ inputs.push }}
+        context: .
+        file: ./Dockerfile
+        # load the image into the docker cache to be able to run it
+        load: ${{ inputs.load }}
+        platforms: linux/amd64
+        tags: ${{ inputs.docker_tag }}
+    - name: Run docker image
+      shell: bash
+      run: |
+        docker run -d -p ${{inputs.port_maps }} ${{ inputs.docker_tag }}
+    - name: Test docker image endpoint
+      # Use the retry action
+      uses: nick-fields/retry@7152eba30c6575329ac0576536151aca5a72780e # v3
+      with:
+        max_attempts: 5
+        retry_on: error
+        timeout_seconds: 10
+        # You can specify the shell commands you want to retry here
+        command: |
+          curl -s http://localhost:8080/tomcat-webapp-boilerplate/app/base/health | grep "UP"

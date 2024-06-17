@@ -1,0 +1,5 @@
+---
+GET http://localhost:8080/tomcat-webapp-boilerplate/app/base
+
+---
+POST http://localhost:8080/tomcat-webapp-boilerplate/app/base/health

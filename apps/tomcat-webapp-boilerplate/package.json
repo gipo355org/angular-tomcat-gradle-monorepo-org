@@ -1,0 +1,34 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "working with `./gradlew war`",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docker compose -f compose.dev.yml up --no-recreate --watch & nodemon --watch . --ext '.java' --exec './gradlew war'",
+    "commit": "git cz",
+    "prepare": "node scripts/install-hooks.cjs",
+    "commitlint": "commitlint --edit",
+    "format": "node scripts/gradlew.cjs --format",
+    "lint": "node scripts/gradlew.cjs --lint",
+    "build": "node scripts/gradlew.cjs --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "3.1.3",
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "cz-git": "1.9.3",
+    "prettier": "3.3.2",
+    "prettier-plugin-toml": "2.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "packageManager": "npm@10.8.1"
+}
