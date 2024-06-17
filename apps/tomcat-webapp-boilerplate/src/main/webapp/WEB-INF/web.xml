@@ -12,7 +12,7 @@
 		<!-- Configura il package dei servizi rest -->
 		<init-param>
 			<param-name>javax.ws.rs.Application</param-name>
-			<param-value>com.smi.xxx.rest.base.App</param-value>
+			<param-value>io.github.gipo999.rest.base.App</param-value>
 		</init-param>
 
 		<!-- Configura il supporto alle risorse JSON -->
@@ -32,7 +32,7 @@
 	<!-- JWT FILTER -->
 	<filter>
 		<filter-name>jwt</filter-name>
-		<filter-class>com.smi.xxx.rest.base.JwtFilter</filter-class>
+		<filter-class>io.github.gipo999.rest.base.JwtFilter</filter-class>
 		<async-supported>true</async-supported>
 	</filter>
 	<filter-mapping>
@@ -43,7 +43,7 @@
 	<!-- CORS FILTER -->
 	<filter>
 		<filter-name>cors</filter-name>
-		<filter-class>com.smi.xxx.rest.base.CorsFilter</filter-class>
+		<filter-class>io.github.gipo999.rest.base.CorsFilter</filter-class>
 		<async-supported>true</async-supported>
 	</filter>
 	<filter-mapping>

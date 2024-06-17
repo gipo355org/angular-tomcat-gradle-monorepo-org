@@ -1,4 +1,4 @@
-package com.smi.xxx.rest.base;
+package io.github.gipo999.rest.base;
 
 import com.google.gson.Gson;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.smi.xxx.rest.base;
+package io.github.gipo999.rest.base;
 
 import java.util.HashSet;
 import java.util.Set;

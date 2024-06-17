@@ -1,4 +1,4 @@
-package com.smi.xxx.rest.base;
+package io.github.gipo999.rest.base;
 
 /** Login Model. */
 public class LoginModel {

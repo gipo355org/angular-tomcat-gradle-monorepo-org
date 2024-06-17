@@ -21,7 +21,7 @@ plugins {
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
-// mainClassName = "com.smi.xxx.rest.base.App"
+// mainClassName = "io.github.gipo999.rest.base.App"
 
 sourceCompatibility = 21
 targetCompatibility = 21
