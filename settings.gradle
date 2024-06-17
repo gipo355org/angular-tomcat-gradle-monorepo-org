@@ -7,8 +7,8 @@
 
 rootProject.name = 'angular-tomcat-gradle-monorepo'
 
-// include 'library'
-// include 'application'
+include 'smispi'
+include 'tomcat-webapp-boilerplate'
 
 allprojects {
   apply {
