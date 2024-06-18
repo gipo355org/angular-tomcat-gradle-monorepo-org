@@ -7,5 +7,9 @@
 
 rootProject.name = 'angular-tomcat-gradle-monorepo'
 
-include ':libs:smispi'
-include ':apps:tomcat-api-boilerplate'
+// https://docs.gradle.org/current/userguide/multi_project_builds.html#multi_project_builds
+// avoid phantom dirs
+include(':libs:smispi')
+project(':libs:smispi').projectDir = file('libs/smispi')
+include(':apps:tomcat-api-boilerplate')
+project(':apps:tomcat-api-boilerplate').projectDir = file('apps/tomcat-api-boilerplate')
