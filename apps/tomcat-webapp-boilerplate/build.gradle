@@ -36,6 +36,9 @@ def JERSEY_VERSION = "2+"
 def TOMCAT_VERSION = "9+"
 
 dependencies {
+  //  NOTE: can import directly from the monorepo libs
+  implementation project(':libs:smispi')
+
 	// tools
 	rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.9.0")
 
