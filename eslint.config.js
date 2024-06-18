@@ -28,14 +28,7 @@ const compat = new FlatCompat({
 module.exports = tseslint.config(
   {
     // must be on its own for glob pattern to work
-    ignores: [
-      '**/*',
-      // '!**/*',
-      // 'node_modules',
-      // 'dist',
-      // 'tmp',
-      // '.angular'
-    ],
+    ignores: ['**/*'],
   },
 
   {
@@ -140,32 +133,6 @@ module.exports = tseslint.config(
     },
   },
 
-  // filetype specific rules and configs
-  // {
-  //   files: ['*.json'],
-  //   languageOptions: {
-  //     parser: jsoncParser,
-  //   },
-  //   rules: {
-  //     // FIXME: could not find plugin nx
-  //     // '@nx/dependency-checks': 'error', // TODO:
-  //   },
-  // },
-  // IMP: this works but not compatible with multi package.json in integrated monorepo
-  // ...compat.config({ parser: 'jsonc-eslint-parser' }).map((config) => ({
-  //   ...config,
-  //   files: ['**/*.json'],
-  //   rules: {
-  //     '@nx/dependency-checks': [
-  //       'error',
-  //       {
-  //         ignoredFiles: ['{projectRoot}/vite.config.{js,ts,mjs,mts}'],
-  //       },
-  //     ],
-  //   },
-  // })),
-
-  // all files
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
@@ -185,23 +152,6 @@ module.exports = tseslint.config(
     },
   },
 
-  // NOTE: this is how you map a config to a filetype
-  // alternatively you can use the extend utility provided by typescript-eslint
-
-  // typescript files
-  // ...[
-  //   tseslint.configs.eslintRecommended, // disable eslint rules already covered by typescript-eslint
-  //   ...tseslint.configs.strictTypeChecked,
-  //   ...tseslint.configs.stylisticTypeChecked,
-  // ].map((conf) => ({
-  //   ...conf,
-  //   files: ['**/*.ts', '**/*.tsx'],
-  //   rules: {
-  //     '@typescript-eslint/explicit-module-boundary-types': ['error'],
-  //   },
-  // })),
-
-  // alternative way as the one above
   {
     // TODO: missing @nx/typescript
     files: ['**/*.ts', '**/*.tsx'],
@@ -227,7 +177,6 @@ module.exports = tseslint.config(
     },
   },
 
-  // test files
   {
     files: ['**/*.spec.ts', '**/*.spec.tsx', '**/*.spec.js', '**/*.spec.jsx'],
     languageOptions: {
@@ -238,108 +187,15 @@ module.exports = tseslint.config(
     rules: {},
   }
 
-  // FIXME: compatility mode after nx migration
-
-  // do they override previous rules?
-  // do these even work?? they don't
-
-  // COMPATIBILITY MODE for unsupported plugins
-  // ...compat.extends('plugin:sonarjs/recommended')
-  // ...compat.config({
-  //   // plugins: [
-  //   //   'import',
-  //   //   // 'sonarjs',
-  //   //   //   '@nx/javascript'
-  //   // ],
-  //   extends: [
-  //     'plugin:import/recommended',
-  //     'plugin:sonarjs/recommended',
-  //     'plugin:@nx/javascript',
-  //     'plugin:@nx/typescript', //TODO: how to specify files for compatibility mode
-  //   ],
-  //   rules: {
-  //     'import/no-unresolved': 'off',
-  //     'import/no-extraneous-dependencies': 'off',
-  //     'import/first': 'error',
-  //     'import/newline-after-import': 'error',
-  //     'import/no-duplicates': 'error',
-  //     'import/order': 'off',
-  //     'import/export': 'warn',
-  //     'import/prefer-default-export': 'off',
-  //     'import/no-default-export': 'warn',
-  //     'import/namespace': 'off',
-  //   },
-  // })
-
-  // ...compat.extends('plugin:@nx/typescript'),
-  // .map((config) => ({
+  // ...compat.config({ extends: ['plugin:@nx/typescript'] }).map((config) => ({
   //   ...config,
   //   files: ['**/*.ts', '**/*.tsx'],
-  //   rules: {},
+  //   ...config.rules,
   // })),
-
-  // BUG: THE MAP DOESN'T WORK with compat mode for assigning files
-
-  // all files
-  // ...compat
-  //   .config({
-  //     plugins: ['sonarjs'],
-  //     extends: [
-  //       'plugin:@nx/javascript',
-  //       'plugin:import/recommended', // TODO:
-  //       'plugin:sonarjs/recommended',
-  //     ],
-  //   })
-  //   .map((config) => ({
-  //     ...config,
-  //     // files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
-  //     rules: {
-  //       'import/no-unresolved': 'off',
-  //       'import/no-extraneous-dependencies': 'off',
-  //       // 'import/first': 'error',
-  //       // 'import/newline-after-import': 'error', // BUG: new config
-  //       'import/no-duplicates': 'error',
-  //       'import/order': 'off',
-  //       'import/export': 'warn',
-  //       'import/prefer-default-export': 'off',
-  //       'import/no-default-export': 'warn',
-  //       'import/namespace': 'off',
-  //     },
-  //   })),
-
-  // typescript files
-  // ...compat
-  //   .config({
-  //     plugins: [
-  //       // '@typescript-eslint'
-  //       'typescript-sort-keys',
-  //     ],
-  //     extends: [
-  //       'plugin:@nx/typescript', //TODO:
-  //       'plugin:typescript-sort-keys/recommended',
-  //     ],
-  //   })
-  //   .map((config) => ({
-  //     ...config,
-  //     files: ['**/*.ts', '**/*.tsx'],
-  //     rules: {},
-  //   }))
-
-  // javascript files only
-  // ...compat
-  //   .config({
-  //     extends: [ ],
-  //   })
-  //   .map((config) => ({
-  //     ...config,
-  //     files: ['**/*.js', '**/*.jsx'],
-  //     rules: {},
-  //   }))
-
-  // spec files
-  // ...compat.config().map((config) => ({
+  //
+  // ...compat.config({ env: { jest: true } }).map((config) => ({
   //   ...config,
   //   files: ['**/*.spec.ts', '**/*.spec.tsx', '**/*.spec.js', '**/*.spec.jsx'],
-  //   rules: {},
-  // })),
+  //   ...config.rules,
+  // }))
 );
