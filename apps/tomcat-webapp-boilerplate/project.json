@@ -4,6 +4,18 @@
   "root": "apps/tomcat-webapp-boilerplate",
   "projectType": "application",
   "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./gradlew :apps:tomcat-webapp-boilerplate:spotlessCheck"
+      }
+    },
+    "fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx scripts/gradlew.ts --format"
+      }
+    },
     "docker-compose2": {
       "executor": "nx:run-commands",
       "options": {
