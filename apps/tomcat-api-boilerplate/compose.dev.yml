@@ -7,10 +7,10 @@
 # requires ports available on the host
 
 services:
-  tomcat-webapp-boilerplate:
+  tomcat-api-boilerplate:
     build:
       dockerfile: ./Dockerfile
-    container_name: tomcat-webapp-boilerplate
+    container_name: tomcat-api-boilerplate
     env_file: ./.env
     develop:
       # watch allows to sync files from host to container
@@ -18,8 +18,8 @@ services:
       # on every war change, it will sync the war to the container and tomcat automatically restarts the app
       watch:
         - action: sync+restart
-          path: "./build/libs/"
-          target: "/usr/local/tomcat/webapps/"
+          path: './build/libs/'
+          target: '/usr/local/tomcat/webapps/'
     # for ease of use, we forward the tomcat port to the host
     network_mode: host
   ########## postgres
@@ -64,4 +64,5 @@ services:
     # - /tmp/db/redis:/data
     environment:
       # default user is: default
-      - REDIS_ARGS=--save 60 1000 --appendonly yes --loglevel warning --requirepass ${REDIS_PASSWORD}
+      - REDIS_ARGS=--save 60 1000 --appendonly yes --loglevel warning
+        --requirepass ${REDIS_PASSWORD}

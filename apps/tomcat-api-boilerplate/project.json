@@ -1,19 +1,19 @@
 {
-  "name": "tomcat-webapp-boilerplate",
+  "name": "tomcat-api-boilerplate",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "root": "apps/tomcat-webapp-boilerplate",
+  "root": "apps/tomcat-api-boilerplate",
   "projectType": "application",
   "targets": {
     "lint": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "./gradlew :apps:tomcat-webapp-boilerplate:check"
+        "command": "./gradlew :apps:tomcat-api-boilerplate:check"
       }
     },
     "fix": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "./gradlew :apps:tomcat-webapp-boilerplate:format"
+        "command": "./gradlew :apps:tomcat-api-boilerplate:format"
       }
     },
     "docker-compose2": {
@@ -27,7 +27,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "../../gradlew build",
-        "cwd": "apps/tomcat-webapp-boilerplate"
+        "cwd": "apps/tomcat-api-boilerplate"
       }
     },
     "preview2": {
@@ -55,7 +55,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "../../gradlew spotlessApply && ../../gradlew rewriteRun",
-        "cwd": "apps/tomcat-webapp-boilerplate"
+        "cwd": "apps/tomcat-api-boilerplate"
       }
     },
     "release2": {

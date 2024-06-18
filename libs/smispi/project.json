@@ -27,7 +27,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "../../gradlew build",
-        "cwd": "apps/tomcat-webapp-boilerplate"
+        "cwd": "apps/tomcat-api-boilerplate"
       }
     },
     "preview2": {
@@ -55,7 +55,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "../../gradlew spotlessApply && ../../gradlew rewriteRun",
-        "cwd": "apps/tomcat-webapp-boilerplate"
+        "cwd": "apps/tomcat-api-boilerplate"
       }
     },
     "release2": {
