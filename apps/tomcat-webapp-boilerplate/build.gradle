@@ -268,3 +268,8 @@ tasks.register('integrationTest', Test) {
 		events "passed", "skipped", "failed"
 	}
 }
+
+tasks.register("format") {
+	dependsOn "spotlessApply"
+	dependsOn "rewriteRun"
+}

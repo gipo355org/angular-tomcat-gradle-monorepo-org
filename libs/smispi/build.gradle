@@ -231,3 +231,8 @@ java {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
+
+tasks.register("format") {
+	dependsOn "spotlessApply"
+	dependsOn "rewriteRun"
+}

@@ -16,8 +16,8 @@ repos:
     rev: d0293ebc40f6c0606d624ee4c638c7597f8044d2 # pragma: allowlist secret
     hooks:
       # on spotless
-      - id: trailing-whitespace
-        stages: [commit]
+      # - id: trailing-whitespace
+      #   stages: [commit]
       # yaml and json in spotless too for format
       - id: check-yaml
         stages: [commit]

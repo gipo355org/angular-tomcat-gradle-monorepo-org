@@ -1,19 +1,19 @@
 {
-  "name": "tomcat-webapp-boilerplate",
+  "name": "smispi",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "root": "apps/tomcat-webapp-boilerplate",
-  "projectType": "application",
+  "root": "libs/smispi",
+  "projectType": "library",
   "targets": {
     "lint": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "./gradlew :apps:tomcat-webapp-boilerplate:check"
+        "command": "./gradlew :libs:smispi:check"
       }
     },
     "fix": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "./gradlew :apps:tomcat-webapp-boilerplate:format"
+        "command": "./gradlew :libs:smispi:format"
       }
     },
     "docker-compose2": {
