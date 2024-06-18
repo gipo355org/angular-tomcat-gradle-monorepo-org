@@ -11,7 +11,7 @@ services:
     build:
       dockerfile: ./Dockerfile
     container_name: tomcat-api-boilerplate
-    env_file: ./.env
+    env_file: ./.env.default
     develop:
       # watch allows to sync files from host to container
       # When we run npm run dev, it will start the container and build the war.
@@ -22,47 +22,3 @@ services:
           target: '/usr/local/tomcat/webapps/'
     # for ease of use, we forward the tomcat port to the host
     network_mode: host
-  ########## postgres
-  postgresdev:
-    env_file: ./.env
-    image: postgres:latest@sha256:1bf73ccae25238fa555100080042f0b2f9be08eb757e200fe6afc1fc413a1b3c
-    # restart: unless-stopped
-    network_mode: host
-    container_name: postgresdev
-    volumes:
-      #     - ~/data/postgres:/var/lib/postgresql/data
-      - /tmp/db/psql:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: ${PSQL_USER} # default
-      POSTGRES_PASSWORD: ${PSQL_PASSWORD}
-      POSTGRES_DB: ${PSQL_DATABASE_NAME}
-  pgadmin:
-    container_name: pgadmin4_container
-    image: dpage/pgadmin4:latest@sha256:61fd25f428c155027fb2aa74b913d317af11a14f55e6135484b5e86a8840520b
-    # restart: unless-stopped
-    network_mode: host
-    depends_on:
-      - postgresdev
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com #pragma: allowlist secret
-      PGADMIN_DEFAULT_PASSWORD: admin #pragma: allowlist secret
-      # PGADMIN_LISTEN_PORT: 9001
-    # ports:
-    #   - 127.0.0.1:9001:80
-  ########## redis
-  redisdev:
-    env_file: ./.env
-    image: redis/redis-stack:latest@sha256:dabd731cfebd2a7721ff1918257e08bff2b66963b938e796916cac53542ad003
-    # user: redis
-    # restart: unless-stopped
-    network_mode: host
-    # ports:
-    #   - 127.0.0.1:6379:6379
-    #   - 127.0.0.1:9002:8001 # redis insight
-    container_name: redisdev
-    # volumes:
-    # - /tmp/db/redis:/data
-    environment:
-      # default user is: default
-      - REDIS_ARGS=--save 60 1000 --appendonly yes --loglevel warning
-        --requirepass ${REDIS_PASSWORD}

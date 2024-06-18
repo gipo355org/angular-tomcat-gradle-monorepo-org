@@ -4,6 +4,13 @@
   "root": "apps/tomcat-api-boilerplate",
   "projectType": "application",
   "targets": {
+    "compose": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker-compose -f compose.dev.yml up --no-recreate --watch",
+        "cwd": "apps/tomcat-api-boilerplate"
+      }
+    },
     "lint": {
       "executor": "nx:run-commands",
       "options": {
@@ -14,6 +21,12 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "./gradlew :apps:tomcat-api-boilerplate:format"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker-compose -f apps/tomcat-api-boilerplate/compose.dev.yml up --no-recreate --watch & nodemon --watch apps/tomcat-api-boilerplate/src --ext '.java' --exec './gradlew :apps:tomcat-api-boilerplate:war'"
       }
     },
     "docker-compose2": {
