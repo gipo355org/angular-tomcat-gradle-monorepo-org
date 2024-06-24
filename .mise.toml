@@ -2,3 +2,4 @@
 java = "21"
 node = "22"
 gradle = "8"
+go = "1.22"
