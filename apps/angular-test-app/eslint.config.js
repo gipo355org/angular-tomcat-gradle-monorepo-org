@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-module */
 const { FlatCompat } = require('@eslint/eslintrc');
 const globals = require('globals');
 
