@@ -12,7 +12,7 @@ plugins {
 	// alias(libs.plugins.foojayResolver)
 }
 
-rootProject.name = 'angular-tomcat-gradle-monorepo'
+rootProject.name = 'angular-java-monorepo'
 
 // NOTE: must manually include subprojects, this is not nx
 

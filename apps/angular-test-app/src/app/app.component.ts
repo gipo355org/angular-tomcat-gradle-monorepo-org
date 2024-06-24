@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AngularLibComponent } from '@angular-tomcat-gradle-monorepo/angular-lib';
+import { AngularLibComponent } from '@angular-java-monorepo/angular-lib';
 
 import { NxWelcomeComponent } from './nx-welcome.component';
 
