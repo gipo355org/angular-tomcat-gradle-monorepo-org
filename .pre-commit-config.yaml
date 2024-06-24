@@ -98,7 +98,7 @@ repos:
         stages: [commit]
       - id: lint-test-build
         name: lint-test-build
-        entry: pnpm lint-all
+        entry: pnpm lint-affected
         verbose: true
         pass_filenames: false
         language: system
