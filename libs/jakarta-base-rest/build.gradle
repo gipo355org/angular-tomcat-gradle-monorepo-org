@@ -1,0 +1,18 @@
+plugins { }
+
+project.webAppDirName = 'src/main/webapp'
+
+// TODO: what if different projects need different versions?
+// e.g different tomcat vers
+// different java vers
+// there is documentation on how to do this on the root gradle links
+dependencies {
+
+	//  NOTE: can import directly from the monorepo libs
+	implementation project(':libs:smispi')
+
+	compileOnly libs.bundles.tomcat.api.compileOnly
+	implementation libs.bundles.tomcat.api.implementation
+
+	testImplementation libs.bundles.tomcat.api.testImplementation
+}
