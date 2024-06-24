@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "changeset": "changeset",
+    "changeset-publish": "echo 'TODO: multilanguage'",
     "prepare": "tsx scripts/install-hooks.ts",
     "preinstall": "npx only-allow pnpm",
     "clear-all": "tsx scripts/clear.ts",
