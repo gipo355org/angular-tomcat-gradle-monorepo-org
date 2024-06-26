@@ -1,0 +1,42 @@
+{
+  "name": "jakarta-base-rest-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "libs/jakarta-base-rest",
+  "projectType": "library",
+  "targets": {
+    "prepare-env": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "mkdir -p dist/libs/jakarta-base-rest"
+      }
+    },
+    "compose": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker-compose -f compose.dev.yml up --no-recreate --watch",
+        "cwd": "libs/jakarta-base-rest"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./gradlew :libs:jakarta-base-rest:lint"
+      }
+    },
+    "fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./gradlew :libs:jakarta-base-rest:fix"
+      }
+    },
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "libs/jakarta-base-rest-e2e/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["jakarta-base-rest:build"]
+    }
+  }
+}

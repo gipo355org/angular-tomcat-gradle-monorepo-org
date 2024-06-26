@@ -2,6 +2,8 @@ plugins { }
 
 project.webAppDirName = 'src/main/webapp'
 
+version = getVersionFromNpm()
+
 // TODO: what if different projects need different versions?
 // e.g different tomcat vers
 // different java vers

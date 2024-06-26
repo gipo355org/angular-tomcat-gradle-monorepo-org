@@ -3,20 +3,17 @@ plugins {
 	alias(libs.plugins.vanniktechPublish)
 }
 
+// defined in global-settings.gradle
+version = getVersionFromNpm()
+
 dependencies {
 	// api 'org.slf4j:slf4j-api:2.0.13'
 	api libs.slf4j.api
 }
 
-// ./gradlew -Pversion=${version} publish will set the version when publishing
-
+// TODO: move those to global settings
 def customGithubRepository = 'smispi'
 def customGithubOwner = 'gipo999'
-def customArtifactID = 'smispi'
-def customProjectDescription = 'Generic SPI'
-def customInceptionYear = '2024'
-def customBuildLicense = 'MIT'
-def custmoLicenseURL = 'https://opensource.org/licenses/MIT'
 def customMavenUsername = System.getenv('MAVEN_USERNAME')
 def customMavenPassword = System.getenv('MAVEN_PASSWORD')
 def customSigningKey = System.getenv('GPG_PRIVATE')
@@ -25,10 +22,14 @@ def customSigningPassword = System.getenv('GPG_PASSWORD')
 def customGithubToken = System.getenv('GITHUB_TOKEN')
 def customGithubActor = System.getenv('GITHUB_ACTOR')
 
-import com.vanniktech.maven.publish.SonatypeHost
+// TODO: possily parse from package.json to have a single source of truth
+def customArtifactID = 'smispi'
+def customProjectDescription = 'Generic SPI'
+def customInceptionYear = '2024'
+def customBuildLicense = 'MIT'
+def custmoLicenseURL = 'https://opensource.org/licenses/MIT'
 
-// defined in global-settings.gradle
-version = getVersionFromNpm()
+import com.vanniktech.maven.publish.SonatypeHost
 
 mavenPublishing {
 	publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
@@ -72,12 +73,13 @@ mavenPublishing {
 	}
 }
 
+// adding secondary repository
 publishing {
 	repositories {
 		maven {
 			name = "GitHubPackages"
 
-			url = "https://maven.pkg.github.com/gipo999/smispi"
+			url = "https://maven.pkg.github.com/${customGithubOwner}/${customGithubRepository}"
 
 			credentials {
 				username = customGithubActor

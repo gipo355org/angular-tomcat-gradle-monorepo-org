@@ -7,19 +7,19 @@ const tsSortKeys = require('eslint-plugin-typescript-sort-keys');
 const eslintPluginSimpleImportSort = require('eslint-plugin-simple-import-sort');
 const tseslint = require('typescript-eslint');
 const eslintPluginUnicorn = require('eslint-plugin-unicorn');
-const jsoncParser = require('jsonc-eslint-parser');
 const tsParser = require('@typescript-eslint/parser');
 const eslint = require('@eslint/js');
 
-// const eslintrc = require('@eslint/eslintrc');
-const { FlatCompat } = require('@eslint/eslintrc');
-
 const eslintPluginImport = require('eslint-plugin-import');
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: eslint.configs.recommended,
-});
+// const jsoncParser = require('jsonc-eslint-parser');
+// const eslintrc = require('@eslint/eslintrc');
+// const { FlatCompat } = require('@eslint/eslintrc');
+
+// const compat = new FlatCompat({
+//   baseDirectory: __dirname,
+//   recommendedConfig: eslint.configs.recommended,
+// });
 
 // TODO: sonar, angular, import plugins
 

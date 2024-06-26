@@ -36,6 +36,20 @@
       "options": {
         "command": "docker run --network=host gipo355/tomcat-api-boilerplate"
       }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'test not implemented'",
+        "cwd": "apps/tomcat-api-boilerplate"
+      }
+    },
+    "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'e2e not implemented'",
+        "cwd": "apps/tomcat-api-boilerplate"
+      }
     }
   }
 }
