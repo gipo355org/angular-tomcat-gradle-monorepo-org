@@ -44,6 +44,9 @@ runs:
     #       ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}
     #       ${{ runner.os }}-nx-
     # install nx cli
+    - name: Install Playwright Browsers
+      shell: bash
+      run: npx playwright install --with-deps
     - name: Install Nx CLI
       shell: bash
       run: npm install -g nx@latest

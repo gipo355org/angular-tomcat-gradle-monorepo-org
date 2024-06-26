@@ -7,6 +7,7 @@ on:
   workflow_dispatch: {}
 jobs:
   LintTestBuild:
+    timeout-minutes: 20
     permissions:
       # Needed for nx-set-shas when run on the main branch
       actions: read
