@@ -1,0 +1,14 @@
+# https://github.com/microsoft/playwright/issues/2621#issuecomment-931530175
+# https://github.com/microsoft/playwright/issues/26482
+services:
+  playwright:
+    container_name: playwright
+    image: mcr.microsoft.com/playwright:v1.41.0-jammy
+    command:
+      /bin/sh -c "cd /home/pwuser && npx -y playwright@1.41.0 run-server --port
+      3000 --host 0.0.0.0"
+    # user: root
+    # volumes:
+    #   - /tmp/db/mssql:/var/opt/mssql/
+    ports:
+      - '127.0.0.1:4500:3000'
