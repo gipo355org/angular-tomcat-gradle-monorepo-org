@@ -14,7 +14,7 @@ describe('APP GET /healthz', () => {
   it('Server should be up', async () => {
     const { body, statusCode } = await u11.request({
       method: 'GET',
-      path: '/jakarta-base-rest/app/base/health',
+      path: '/jakarta-base-rest/app/base/healthz',
     });
 
     // only needed if using streams (read(), for await of)
