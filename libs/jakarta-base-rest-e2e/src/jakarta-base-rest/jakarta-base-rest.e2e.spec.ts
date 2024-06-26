@@ -14,7 +14,7 @@ describe('APP GET /healthz', () => {
   it('Server should be up', async () => {
     const { body, statusCode } = await u11.request({
       method: 'GET',
-      path: '/healthz',
+      path: '/jakarta-base-rest/app/base/health',
     });
 
     // only needed if using streams (read(), for await of)
@@ -25,6 +25,6 @@ describe('APP GET /healthz', () => {
     console.log(data);
 
     expect(statusCode).toBe(H.OK);
-    expect(data).toEqual({ ok: true });
+    expect(data).toEqual({ status: 'UP' });
   });
 });

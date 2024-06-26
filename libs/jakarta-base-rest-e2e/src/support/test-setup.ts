@@ -9,7 +9,7 @@ import {
   setGlobalDispatcher,
 } from 'undici';
 
-const undiciClient = new Client('http://localhost:3000', {
+const undiciClient = new Client('http://localhost:8080', {
   keepAliveMaxTimeout: 10,
   keepAliveTimeout: 10,
 });

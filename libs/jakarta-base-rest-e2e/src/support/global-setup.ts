@@ -34,10 +34,14 @@ const undiciRetryAgent = new RetryAgent(undiciClient);
 setGlobalDispatcher(undiciClient);
 
 const composeConfig = {
-  cwd: 'compose',
-  config: ['redis.compose.yml', 'psql.compose.yml'],
+  // cwd: 'docker',
+  config: [
+    // 'docker/psql.compose.yml',
+    'libs/jakarta-base-rest/compose.dev.yml',
+  ],
   log: true,
 };
+
 declare global {
   var __SERVER_PROCESS__: ChildProcessWithoutNullStreams;
   var __TEARDOWN_MESSAGE__: string;
@@ -54,14 +58,14 @@ module.exports = async function () {
   await compose.upAll(composeConfig);
 
   // Start the API server
-  const server = spawn('nx', ['serve', 'jakarta-base-rest'], {
-    shell: true,
-    //stdio: 'inherit',
-    stdio: 'pipe',
-  });
+  // const server = spawn('nx', ['serve', 'jakarta-base-rest'], {
+  //   shell: true,
+  //   //stdio: 'inherit',
+  //   stdio: 'pipe',
+  // });
 
   // Store the server process in globalThis so it can be accessed in globalTeardown
-  globalThis.__SERVER_PROCESS__ = server;
+  // globalThis.__SERVER_PROCESS__ = server;
 
   // Hint: Use `globalThis` to pass variables to global teardown.
   globalThis.__TEARDOWN_MESSAGE__ = '\nTearing down...\n';
@@ -102,15 +106,17 @@ module.exports = async function () {
   //   },
   // });
 
-  console.log('Checkint /healthz...');
+  console.log('Checking /healthz...');
   // const res = await agent.request({
   //   method: 'GET',
   //   path: '/healthz',
   //   origin: 'http://localhost:3000',
   // });
+  // BUG: not building  changed baseservice with healthz
+  // try to change baseservice to healthz
   const res = await undiciRetryAgent.request({
     method: 'GET',
-    path: '/healthz',
+    path: '/jakarta-base-rest/app/base/health',
   });
 
   if (res.statusCode !== HttpStatus.OK) {

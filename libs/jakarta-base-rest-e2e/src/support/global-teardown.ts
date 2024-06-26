@@ -5,8 +5,8 @@ module.exports = async function () {
   // Hint: `globalThis` is shared between setup and teardown.
   console.log(globalThis.__TEARDOWN_MESSAGE__);
 
-  console.log('Tearing down server');
-  globalThis.__SERVER_PROCESS__.kill('SIGINT');
+  // console.log('Tearing down server');
+  // globalThis.__SERVER_PROCESS__.kill('SIGINT');
 
   console.log('Tearing down undici client');
   await globalThis.__UNDICI_RETRY_AGENT__.close();
