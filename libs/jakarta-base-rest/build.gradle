@@ -5,6 +5,11 @@ project.webAppDirName = 'src/main/webapp'
 
 version = getVersionFromNpm()
 
+// archiveFileName = "${project.name}-${project.version}.war"
+war {
+	archiveFileName = "${project.name}.war"
+}
+
 // TODO: what if different projects need different versions?
 // e.g different tomcat vers
 // different java vers

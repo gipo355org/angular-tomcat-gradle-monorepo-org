@@ -116,7 +116,7 @@ module.exports = async function () {
   // try to change baseservice to healthz
   const res = await undiciRetryAgent.request({
     method: 'GET',
-    path: '/jakarta-base-rest/app/base/health',
+    path: '/jakarta-base-rest/app/base/healthz',
   });
 
   if (res.statusCode !== HttpStatus.OK) {

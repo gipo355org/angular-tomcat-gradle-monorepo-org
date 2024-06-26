@@ -7,7 +7,7 @@
 # requires ports available on the host
 
 services:
-  jakarta-base-rest:
+  api:
     build:
       dockerfile: ./dev.Dockerfile
     container_name: jakarta-base-rest

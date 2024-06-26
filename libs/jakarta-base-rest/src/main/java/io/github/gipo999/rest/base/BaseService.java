@@ -57,10 +57,10 @@ public class BaseService {
   /** Health check. */
   @GET
   @Produces({MediaType.APPLICATION_JSON})
-  @Path("/health")
+  @Path("/healthz")
   public Response health() {
-    var resJson = new HashMap<String, String>();
-    resJson.put("status", "UP");
+    var resJson = new HashMap<String, Boolean>();
+    resJson.put("ok", true);
 
     var json = GSON.toJson(resJson);
 

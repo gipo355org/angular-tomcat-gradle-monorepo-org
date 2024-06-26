@@ -25,6 +25,6 @@ describe('APP GET /healthz', () => {
     console.log(data);
 
     expect(statusCode).toBe(H.OK);
-    expect(data).toEqual({ status: 'UP' });
+    expect(data).toEqual({ ok: true });
   });
 });
