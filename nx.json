@@ -17,6 +17,9 @@
     "sharedGlobals": []
   },
   "targetDefaults": {
+    "e2e": {
+      "cache": true
+    },
     "build": {
       "dependsOn": ["^build"],
       "cache": true

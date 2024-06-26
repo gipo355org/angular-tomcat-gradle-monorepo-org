@@ -14,7 +14,7 @@
       "dependsOn": ["prepare-env"],
       "executor": "nx:run-commands",
       "options": {
-        "command": "./gradlew :libs:jakarta-base-rest:buildWar && cp libs/jakarta-base-rest/build/libs/jakarta-base-rest.war dist/libs/jakarta-base-rest"
+        "command": "./gradlew :libs:jakarta-base-rest:buildWar && cp libs/jakarta-base-rest/build/libs/*.war dist/libs/jakarta-base-rest"
       }
     },
     "compose": {

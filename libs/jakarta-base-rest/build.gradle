@@ -2,6 +2,7 @@ plugins { }
 
 project.webAppDirName = 'src/main/webapp'
 
+
 version = getVersionFromNpm()
 
 // TODO: what if different projects need different versions?
@@ -14,6 +15,7 @@ dependencies {
 	implementation project(':libs:smispi')
 
 	compileOnly libs.bundles.tomcat.api.compileOnly
+
 	implementation libs.bundles.tomcat.api.implementation
 
 	testImplementation libs.bundles.tomcat.api.testImplementation
