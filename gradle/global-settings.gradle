@@ -8,3 +8,45 @@ java {
   }
 }
 group = "io.github.gipo999"
+
+// VERSIONING TESTS
+
+// https://github.com/srs/gradle-grunt-plugin/issues/19
+import groovy.json.JsonSlurper
+// get the version from package.json
+// requires groovy.json.JsonSlurper
+// https://stackoverflow.com/questions/71216665/build-gradle-cannot-resolve-symbol-groovy-json-jsonslurper
+
+def packageSlurper = new JsonSlurper()
+//
+// def getVersion()  {
+//   def file = file("${projectDir}/package.json")
+//   // def file = file("package.json")
+//   println file
+//   def packageJson = packageSlurper.parseText(file.text)
+//   // println file
+//   // def packageJson = packageSlurper.parseFile(file("${projectDir}/package.json"))
+//   return packageJson.version
+// }
+
+// https://stackoverflow.com/questions/47492210/react-native-automatic-version-name-from-package-json-to-android-build-manifes
+// Create an easy to use function
+// def GetVersionFromNpm() {
+//     //  Read and parse package.json file from project root
+//     def inputFile = new File("$projectDir/package.json")
+//     def packageJson = new JsonSlurper().parseText(inputFile.text)
+//
+//     // Return the version, you can get any value this way
+//     return packageJson["version"]
+// }
+
+// https://stackoverflow.com/questions/50016599/how-to-define-function-in-external-file
+ext.getVersionFromNpm = { ->
+    //  Read and parse package.json file from project root
+    def inputFile = new File("$projectDir/package.json")
+    def packageJson = new JsonSlurper().parseText(inputFile.text)
+
+    // Return the version, you can get any value this way
+    return packageJson["version"]
+}
+

@@ -32,6 +32,7 @@ buildscript {
 		// classpath("name.remal.gradle-plugins.sonarlint:sonarlint:4.2.4")
 		// classpath("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.15.0")
 		classpath(libs.bundles.tools)
+
 	}
 }
 
@@ -201,6 +202,9 @@ subprojects {
 		testRuntimeOnly(libs.junit.engine)
 		// testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
 		testImplementation(libs.junit.api)
+
+
+    implementation(libs.groovy.json)
 
 		// tools
 		// rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.9.0")

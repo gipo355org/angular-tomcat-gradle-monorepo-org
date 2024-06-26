@@ -26,6 +26,10 @@ def customGithubToken = System.getenv('GITHUB_TOKEN')
 def customGithubActor = System.getenv('GITHUB_ACTOR')
 
 import com.vanniktech.maven.publish.SonatypeHost
+
+// defined in global-settings.gradle
+version = getVersionFromNpm()
+
 mavenPublishing {
 	publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
