@@ -11,7 +11,7 @@ build-all:
 test-affected:
 	@nx affected -t test
 generate-ci-workflow:
-	@nx nx generate ci-workflow --ci=github
+	@nx generate ci-workflow --ci=github
 show-tasks:
   @./gradlew ":libs:smispi:tasks"
 show-nx-tasks:
