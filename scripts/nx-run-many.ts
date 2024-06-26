@@ -5,7 +5,7 @@ const args = process.argv.slice(2);
 
 import { cpus } from 'node:os';
 
-const allowedArgs = ['--lint', '--test', '--build', '--fix'];
+const allowedArgs = ['--lint', '--test', '--build', '--fix', '--e2e'];
 
 const nxCmd = args.shift();
 if (nxCmd !== 'run-many' && nxCmd !== 'affected') {
