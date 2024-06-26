@@ -49,6 +49,8 @@ jobs:
         run: nx run-many -t test
       - name: build
         run: nx run-many -t build
+      - name: build
+        run: nx run-many -t e2e
       # TODO: smoke-tests are quick e2e tests that make sure basic functionality works before launching more expensive tests
       # - name: smoke-test
       #   run: nx run-many -t smoke-test
