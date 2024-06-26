@@ -23,10 +23,12 @@ jobs:
           fetch-depth: 0
           lfs: true
           # persist-credentials: false
-      - uses: ./.github/actions/ci-setup-node
-        name: Setup CI environment node
-      - uses: ./.github/actions/ci-setup-java
-        name: Setup CI environment java
+      - name: Setup CI environment docker
+        uses: ./.github/actions/ci-setup-docker
+      - name: Setup CI environment node
+        uses: ./.github/actions/ci-setup-node
+      - name: Setup CI environment java
+        uses: ./.github/actions/ci-setup-java
       # testing nx affected
       - name:
           Derive appropriate SHAs for base and head for `nx affected` commands
