@@ -84,13 +84,11 @@
   },
   "release": {
     "projects": ["*", "!*-e2e", "root"],
+    "version": {
+      "conventionalCommits": true
+    },
     "changelog": {
-      "projectChangelogs": {
-        "renderer": "@nx/changelog-renderer-github"
-      },
-      "version": {
-        "conventionalCommits": true
-      },
+      "projectChangelogs": true,
       "git": {
         "commit": true,
         "tag": true
