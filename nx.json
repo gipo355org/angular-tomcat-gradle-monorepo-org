@@ -81,5 +81,8 @@
     "@nx/angular:component": {
       "style": "css"
     }
+  },
+  "release": {
+    "projects": ["*", "!*-e2e", "root"]
   }
 }
