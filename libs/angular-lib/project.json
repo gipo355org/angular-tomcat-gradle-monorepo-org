@@ -30,6 +30,13 @@
       "options": {
         "jestConfig": "libs/angular-lib/jest.config.ts"
       }
+    },
+    "nx-release-publish": {
+      "command": "echo 'publishing'",
+      "dependsOn": ["build"],
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
     }
   }
 }
