@@ -85,12 +85,18 @@
   "release": {
     "projects": ["*", "!*-e2e", "root"],
     "changelog": {
-      "projectChangelogs": true
+      "projectChangelogs": {
+        "renderer": "@nx/changelog-renderer-github"
+      },
+      "version": {
+        "conventionalCommits": true
+      },
+      "git": {
+        "commit": true,
+        "tag": true
+      }
     },
     "releaseTagPattern": "release/{projectName}/{version}",
-    "projectsRelationship": "independent",
-    "version": {
-      "conventionalCommits": true
-    }
+    "projectsRelationship": "independent"
   }
 }
