@@ -89,6 +89,7 @@
     },
     "changelog": {
       "projectChangelogs": {
+        "createRelease": "github",
         "renderOptions": {
           "authors": true,
           "commitReferences": true,
