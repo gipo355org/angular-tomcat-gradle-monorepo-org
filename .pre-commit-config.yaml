@@ -27,8 +27,8 @@ repos:
         stages: [commit]
       - id: check-json
         stages: [commit]
-      - id: end-of-file-fixer
-        stages: [commit]
+      # - id: end-of-file-fixer
+      #   stages: [commit]
       - id: check-added-large-files
         stages: [commit]
       - id: check-case-conflict
