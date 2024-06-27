@@ -96,7 +96,6 @@
         }
       }
     },
-    "releaseTagPattern": "release/{projectName}/{version}",
     "projectsRelationship": "independent"
   }
 }
