@@ -17,6 +17,18 @@
     "sharedGlobals": []
   },
   "targetDefaults": {
+    "lint": {
+      "cache": true
+    },
+    "fix": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "build": {
+      "cache": true
+    },
     "@angular-devkit/build-angular:application": {
       "cache": true,
       "dependsOn": ["^build"],
