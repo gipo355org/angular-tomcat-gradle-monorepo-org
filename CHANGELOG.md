@@ -1,3 +1,15 @@
+## 0.3.0 (2024-07-03)
+
+
+### 🚀 Features
+
+- **angular-lib:** remove test comment ([bb098b2](https://github.com/gipo355/angular-tomcat-gradle-monorepo/commit/bb098b2))
+- **global:** add main changelog ([4d486dd](https://github.com/gipo355/angular-tomcat-gradle-monorepo/commit/4d486dd))
+
+### ❤️  Thank You
+
+- gipo355 @gipo355
+
 ## 0.2.0 (2024-07-03)
 
 
