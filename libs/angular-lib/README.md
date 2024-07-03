@@ -9,3 +9,5 @@ Run `nx test angular-lib` to execute the unit tests.
 add commit for version
 
 add commit for breaking change bump
+
+add commit to test pre-release
