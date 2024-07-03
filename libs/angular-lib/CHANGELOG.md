@@ -1,3 +1,15 @@
+## 1.1.0-next.2 (2024-07-03)
+
+
+### 🚀 Features
+
+- **angular-lib:** :sparkles: add normal rel after pre rel
+
+
+### ❤️  Thank You
+
+- gipo355
+
 ## 1.1.0-next.1 (2024-07-03)
 
 
