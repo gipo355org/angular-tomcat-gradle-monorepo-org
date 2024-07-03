@@ -1,3 +1,15 @@
+## 1.1.0-next.0 (2024-07-03)
+
+
+### 🚀 Features
+
+- **angular-lib:** :sparkles: test pre release
+
+
+### ❤️  Thank You
+
+- gipo355
+
 # 1.0.0 (2024-07-03)
 
 
