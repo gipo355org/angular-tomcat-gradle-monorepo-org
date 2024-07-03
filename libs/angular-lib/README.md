@@ -15,3 +15,5 @@ add commit to test pre-release
 add second commit pre-release
 
 add normal release after second pre-release
+
+test breaking change in pre-release
