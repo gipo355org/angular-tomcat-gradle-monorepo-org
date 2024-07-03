@@ -100,8 +100,11 @@
       "conventionalCommits": true
     },
     "changelog": {
+      "workspaceChangelog": {
+        "file": false,
+        "createRelease": "github"
+      },
       "projectChangelogs": {
-        "createRelease": "github",
         "renderOptions": {
           "authors": true,
           "commitReferences": true,
