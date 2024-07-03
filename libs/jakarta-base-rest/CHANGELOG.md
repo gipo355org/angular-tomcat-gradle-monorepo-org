@@ -1,3 +1,7 @@
+## 1.1.0-next.3 (2024-07-03)
+
+This was a version bump only for jakarta-base-rest to align it with other projects, there were no code changes.
+
 ## 1.1.0-next.2 (2024-07-03)
 
 This was a version bump only for jakarta-base-rest to align it with other projects, there were no code changes.

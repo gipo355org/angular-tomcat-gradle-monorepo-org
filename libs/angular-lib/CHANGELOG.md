@@ -1,3 +1,19 @@
+## 1.1.0-next.3 (2024-07-03)
+
+
+### 🚀 Features
+
+- ⚠️  **angular-lib:** :sparkles: test break in prerel
+
+
+#### ⚠️  Breaking Changes
+
+- **angular-lib:** test break in prerel
+
+### ❤️  Thank You
+
+- gipo355
+
 ## 1.1.0-next.2 (2024-07-03)
 
 
