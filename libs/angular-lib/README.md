@@ -7,3 +7,5 @@ This library was generated with [Nx](https://nx.dev).
 Run `nx test angular-lib` to execute the unit tests.
 
 add commit for version
+
+add commit for breaking change bump
