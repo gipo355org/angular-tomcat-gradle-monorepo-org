@@ -1,3 +1,19 @@
+## 0.6.0 (2024-07-03)
+
+
+### 🚀 Features
+
+- **angular-lib:** :sparkles: add doc for release test ([03ddd6f](https://github.com/gipo355/angular-tomcat-gradle-monorepo/commit/03ddd6f))
+
+### 🩹 Fixes
+
+- **deps:** update nrwl monorepo to v19.4.0 ([f09d546](https://github.com/gipo355/angular-tomcat-gradle-monorepo/commit/f09d546))
+- **global:** :bug: fix commitlint ([8d6c503](https://github.com/gipo355/angular-tomcat-gradle-monorepo/commit/8d6c503))
+
+### ❤️  Thank You
+
+- gipo355 @gipo355
+
 ## 0.5.0 (2024-06-27)
 
 

@@ -12,6 +12,7 @@ const issue = execSync('git rev-parse --abbrev-ref HEAD')
 
 const definedScopes = [
   'global',
+  'release',
   ...apps.map((app) => `${app}`),
   ...libs.map((lib) => `${lib}`),
 ];

@@ -1,3 +1,7 @@
+## 0.6.0 (2024-07-03)
+
+This was a version bump only for tomcat-angular-boilerplate to align it with other projects, there were no code changes.
+
 ## 0.5.0 (2024-07-02)
 
 
