@@ -1,8 +1,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { execSync } = require('child_process');
+const { execSync } = require('node:child_process');
 
-const apps = fs.readdirSync(path.resolve(__dirname, 'src'));
+const apps = fs.readdirSync(path.resolve(__dirname, 'apps'));
+const libs = fs.readdirSync(path.resolve(__dirname, 'libs'));
 
 const issue = execSync('git rev-parse --abbrev-ref HEAD')
   .toString()
@@ -11,14 +12,8 @@ const issue = execSync('git rev-parse --abbrev-ref HEAD')
 
 const definedScopes = [
   'global',
-  ...apps.map((app) => `app-${app}`),
-  'gradle',
-  'npm',
-  'git-hooks',
-  'actions',
-  'github',
-  'db',
-  'docs',
+  ...apps.map((app) => `${app}`),
+  ...libs.map((lib) => `${lib}`),
 ];
 
 // .commitlintrc.js
@@ -50,7 +45,7 @@ module.exports = {
         value: 'refs',
       },
     ],
-    enableMultipleScopes: true,
-    scopeEnumSeparator: '/',
+    // enableMultipleScopes: true,
+    // scopeEnumSeparator: '/',
   },
 };
