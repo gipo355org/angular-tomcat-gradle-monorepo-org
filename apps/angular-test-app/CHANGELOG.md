@@ -1,3 +1,7 @@
+## 1.1.0-next.1 (2024-07-03)
+
+This was a version bump only for angular-test-app to align it with other projects, there were no code changes.
+
 ## 1.1.0-next.0 (2024-07-03)
 
 This was a version bump only for angular-test-app to align it with other projects, there were no code changes.

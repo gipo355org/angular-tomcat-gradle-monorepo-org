@@ -1,3 +1,15 @@
+## 1.1.0-next.1 (2024-07-03)
+
+
+### 🩹 Fixes
+
+- **smispi:** :bug: second smispi prerelease
+
+
+### ❤️  Thank You
+
+- gipo355
+
 ## 1.1.0-next.0 (2024-07-03)
 
 This was a version bump only for smispi to align it with other projects, there were no code changes.
