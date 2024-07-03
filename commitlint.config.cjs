@@ -25,7 +25,7 @@ module.exports = {
     'scope-enum': [2, 'always', [...definedScopes]],
   },
   prompt: {
-    useEmoji: false,
+    useEmoji: true,
     customIssuePrefixAlign: !issue ? 'top' : 'bottom',
     defaultIssues: !issue ? '' : `#${issue}`,
     issuePrefixes: [
