@@ -1,3 +1,15 @@
+## 0.1.0 (2024-07-03)
+
+
+### 🚀 Features
+
+- **smispi:** :sparkles: add readme
+
+
+### ❤️  Thank You
+
+- gipo355
+
 ## 0.0.1 (2024-07-03)
 
 
