@@ -17,7 +17,7 @@
       }
     },
     "nx-release-publish": {
-      "command": "./gradlew publishAndReleaseToMavenCentral --no-configuration-cache && ./gradlew publishAllPublicationsToGitHubPackagesRepository"
+      "command": "./gradlew :libs:smispi:publishAndReleaseToMavenCentral --no-configuration-cache && ./gradlew :libs:smispi:publishAllPublicationsToGitHubPackagesRepository"
     }
   }
 }
