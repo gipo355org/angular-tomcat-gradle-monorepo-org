@@ -20,6 +20,12 @@ const cmds = {
 -o -name .cache \
 -o -name .stylelintcache \
 -o -name test-dist \
+-o -name .classpath \
+-o -name .project \
+-o -name build \
+-o -name .settings \
+-o -name .gradle \
+-o -name .bin \
 ) \
 -exec rm -rf {} +`,
 
