@@ -12,8 +12,8 @@ dependencies {
 }
 
 // TODO: move those to global settings
-def customGithubRepository = 'smispi'
-def customGithubOwner = 'gipo999'
+def customGithubRepository = 'angular-tomcat-gradle-monorepo'
+def customGithubOwner = 'gipo355'
 def customMavenUsername = System.getenv('MAVEN_USERNAME')
 def customMavenPassword = System.getenv('MAVEN_PASSWORD')
 def customSigningKey = System.getenv('GPG_PRIVATE')
