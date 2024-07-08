@@ -1,6 +1,6 @@
-package io.github.gipo999.smispi.params;
+package io.github.gipo355.smispi.params;
 
-import io.github.gipo999.smispi.ImplementationParams;
+import io.github.gipo355.smispi.ImplementationParams;
 
 public class StdCustParams implements ImplementationParams {
 

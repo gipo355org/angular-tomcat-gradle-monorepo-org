@@ -20,7 +20,7 @@ java {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
-group = "io.github.gipo999"
+group = "io.github.gipo355"
 
 // VERSIONING TESTS
 

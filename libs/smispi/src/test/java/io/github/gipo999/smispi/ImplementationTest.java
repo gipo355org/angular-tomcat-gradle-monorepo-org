@@ -1,16 +1,16 @@
-package io.github.gipo999.smispi;
+package io.github.gipo355.smispi;
 
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import io.github.gipo999.smispi.interfaces.NamedService001;
-import io.github.gipo999.smispi.interfaces.NamedService002;
-import io.github.gipo999.smispi.interfaces.NamedService003;
-import io.github.gipo999.smispi.interfaces.NamedService004;
-import io.github.gipo999.smispi.params.StdCustParams;
-import io.github.gipo999.smispi.selectors.CustomSelector;
-import io.github.gipo999.smispi.selectors.EmptySelector;
+import io.github.gipo355.smispi.interfaces.NamedService001;
+import io.github.gipo355.smispi.interfaces.NamedService002;
+import io.github.gipo355.smispi.interfaces.NamedService003;
+import io.github.gipo355.smispi.interfaces.NamedService004;
+import io.github.gipo355.smispi.params.StdCustParams;
+import io.github.gipo355.smispi.selectors.CustomSelector;
+import io.github.gipo355.smispi.selectors.EmptySelector;
 import org.junit.jupiter.api.Test;
 
 class ImplementationTest {

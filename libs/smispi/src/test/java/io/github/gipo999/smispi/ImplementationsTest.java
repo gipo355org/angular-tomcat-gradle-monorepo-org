@@ -1,4 +1,4 @@
-package io.github.gipo999.smispi;
+package io.github.gipo355.smispi;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -6,13 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import io.github.gipo999.smispi.filters.CustomFilter;
-import io.github.gipo999.smispi.filters.EmptyFilter;
-import io.github.gipo999.smispi.interfaces.PrioritizedService001;
-import io.github.gipo999.smispi.interfaces.PrioritizedService002;
-import io.github.gipo999.smispi.interfaces.PrioritizedService003;
-import io.github.gipo999.smispi.interfaces.PrioritizedService004;
-import io.github.gipo999.smispi.params.StdCustParams;
+import io.github.gipo355.smispi.filters.CustomFilter;
+import io.github.gipo355.smispi.filters.EmptyFilter;
+import io.github.gipo355.smispi.interfaces.PrioritizedService001;
+import io.github.gipo355.smispi.interfaces.PrioritizedService002;
+import io.github.gipo355.smispi.interfaces.PrioritizedService003;
+import io.github.gipo355.smispi.interfaces.PrioritizedService004;
+import io.github.gipo355.smispi.params.StdCustParams;
 import org.junit.jupiter.api.Test;
 
 class ImplementationsTest {

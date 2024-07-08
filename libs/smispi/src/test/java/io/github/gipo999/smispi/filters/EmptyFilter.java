@@ -1,8 +1,8 @@
-package io.github.gipo999.smispi.filters;
+package io.github.gipo355.smispi.filters;
 
-import io.github.gipo999.smispi.ImplementationParams;
-import io.github.gipo999.smispi.ImplementationsFilter;
-import io.github.gipo999.smispi.PrioritizedService;
+import io.github.gipo355.smispi.ImplementationParams;
+import io.github.gipo355.smispi.ImplementationsFilter;
+import io.github.gipo355.smispi.PrioritizedService;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;

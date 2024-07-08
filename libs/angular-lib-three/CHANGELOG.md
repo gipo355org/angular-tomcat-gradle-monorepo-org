@@ -1,4 +1,4 @@
-# @gipo999/angular-lib-three
+# @gipo355/angular-lib-three
 
 ## 1.1.5
 

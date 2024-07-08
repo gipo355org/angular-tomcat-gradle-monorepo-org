@@ -1,7 +1,7 @@
-package io.github.gipo999.smispi.implementations;
+package io.github.gipo355.smispi.implementations;
 
-import io.github.gipo999.smispi.NamedService;
-import io.github.gipo999.smispi.interfaces.PrioritizedService001;
+import io.github.gipo355.smispi.NamedService;
+import io.github.gipo355.smispi.interfaces.PrioritizedService001;
 
 public class Ps001Standard implements PrioritizedService001 {
 

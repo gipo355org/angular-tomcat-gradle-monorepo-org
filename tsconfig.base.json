@@ -21,8 +21,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gipo999/angular-lib": ["libs/angular-lib/src/index.ts"],
-      "@gipo999/angular-lib-three": [
+      "@gipo355/angular-lib": ["libs/angular-lib/src/index.ts"],
+      "@gipo355/angular-lib-three": [
         "libs/angular-lib-three/src/index.ts"
       ]
     }

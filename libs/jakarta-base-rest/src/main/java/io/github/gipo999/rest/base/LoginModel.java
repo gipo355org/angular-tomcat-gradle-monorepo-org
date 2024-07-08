@@ -1,4 +1,4 @@
-package io.github.gipo999.rest.base;
+package io.github.gipo355.rest.base;
 
 /** Login Model. */
 public class LoginModel {

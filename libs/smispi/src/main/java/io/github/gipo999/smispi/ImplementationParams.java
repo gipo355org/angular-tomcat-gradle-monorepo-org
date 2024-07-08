@@ -1,4 +1,4 @@
-package io.github.gipo999.smispi;
+package io.github.gipo355.smispi;
 
 /** Interface for the parameters of an implementation. */
 @FunctionalInterface

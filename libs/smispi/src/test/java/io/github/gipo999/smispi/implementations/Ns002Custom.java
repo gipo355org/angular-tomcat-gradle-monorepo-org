@@ -1,7 +1,7 @@
-package io.github.gipo999.smispi.implementations;
+package io.github.gipo355.smispi.implementations;
 
-import io.github.gipo999.smispi.NamedService;
-import io.github.gipo999.smispi.interfaces.NamedService002;
+import io.github.gipo355.smispi.NamedService;
+import io.github.gipo355.smispi.interfaces.NamedService002;
 
 public class Ns002Custom implements NamedService002 {
 

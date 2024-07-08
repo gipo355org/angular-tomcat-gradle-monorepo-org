@@ -1,8 +1,8 @@
-package io.github.gipo999.smispi.selectors;
+package io.github.gipo355.smispi.selectors;
 
-import io.github.gipo999.smispi.ImplementationParams;
-import io.github.gipo999.smispi.ImplementationSelector;
-import io.github.gipo999.smispi.NamedService;
+import io.github.gipo355.smispi.ImplementationParams;
+import io.github.gipo355.smispi.ImplementationSelector;
+import io.github.gipo355.smispi.NamedService;
 import java.util.List;
 import java.util.Optional;
 

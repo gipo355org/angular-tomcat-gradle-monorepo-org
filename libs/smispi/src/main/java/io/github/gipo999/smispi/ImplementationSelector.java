@@ -1,4 +1,4 @@
-package io.github.gipo999.smispi;
+package io.github.gipo355.smispi;
 
 import java.util.List;
 import java.util.Optional;
