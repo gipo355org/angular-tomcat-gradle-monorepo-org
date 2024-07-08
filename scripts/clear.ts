@@ -29,6 +29,15 @@ const cmds = {
 ) \
 -exec rm -rf {} +`,
 
+  files: `find . \
+-type f \
+( \
+-name .classpath \
+-o -name .project \
+-o -name .settings \
+) \
+-exec rm -rf {} +`,
+
   cache: `find . \
   -type d \
 ( \
@@ -45,6 +54,7 @@ const cmds = {
 const execsMappings = {
   '--cache': cmds.cache,
   '--folders': cmds.folders,
+  '--files': cmds.files,
 };
 
 execCommands(execsMappings, args);
