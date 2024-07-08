@@ -10,12 +10,12 @@ checkstyle = "10.17.0"
 junit5PluginVersion = '1.2.1'
 pitestVersion = '1.15.2'
 
-tomcat = "9+"
-jersey = "2+"
+tomcat = "9"
+jersey = "2"
 jaxb = "2.3.1"
-slf4j = "2+"
-jakarta = "2+"
-gson = "2+"
+slf4j = "2"
+jakarta = "2"
+gson = "2"
 groovyJson = "3.0.22"
 
 jupiter = '5.10.3'
