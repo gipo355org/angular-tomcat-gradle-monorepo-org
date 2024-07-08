@@ -23,6 +23,7 @@ const cmds = {
 -o -name .classpath \
 -o -name .project \
 -o -name build \
+-o -name tmp \
 -o -name .settings \
 -o -name .gradle \
 -o -name .bin \
