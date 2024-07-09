@@ -23,3 +23,5 @@ test bumping fixed packages changesets
 test linked bump
 
 test linked prerel
+
+test changeset
