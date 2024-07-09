@@ -4,7 +4,7 @@ spotless {
 	// https://github.com/diffplug/spotless/issues/313
 	// https://github.com/diffplug/spotless/issues/178
 	// https://github.com/diffplug/spotless/tree/main/plugin-gradle#ratchet
-	// ratchetFrom 'origin/main'
+	ratchetFrom 'origin/main'
 
 
 	format 'misc', {
