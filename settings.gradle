@@ -24,6 +24,9 @@ rootProject.name = 'gipo355'
 // parse apps and libs dirs and include them if they have a build.gradle in it
 fileTree('.').visit { FileVisitDetails details ->
 	if (details.file.isDirectory()) {
+		// TODO: check if not symbolic links
+		// isRegularFIle
+		// check if project.json is present
 		if (file("$details.file/build.gradle").exists()) {
 
 			// this will produce :appname, i want :dir:appname
