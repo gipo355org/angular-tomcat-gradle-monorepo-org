@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "changeset": "changeset",
+    "format-root-gradle": "./gradlew :spotlessApply",
     "changeset-publish": "changeset publish && nx release publish",
     "prepare": "tsx scripts/install-hooks.ts",
     "preinstall": "npx only-allow pnpm",
