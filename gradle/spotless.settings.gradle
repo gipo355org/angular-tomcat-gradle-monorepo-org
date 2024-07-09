@@ -1,10 +1,10 @@
 // TODO: check if spotlessApply --files * works
 spotless {
-  // https://github.com/pre-commit/pre-commit/issues/747
-  // https://github.com/diffplug/spotless/issues/313
-  // https://github.com/diffplug/spotless/issues/178
-  // https://github.com/diffplug/spotless/tree/main/plugin-gradle#ratchet
-  // ratchetFrom 'origin/main'
+	// https://github.com/pre-commit/pre-commit/issues/747
+	// https://github.com/diffplug/spotless/issues/313
+	// https://github.com/diffplug/spotless/issues/178
+	// https://github.com/diffplug/spotless/tree/main/plugin-gradle#ratchet
+	// ratchetFrom 'origin/main'
 
 
 	format 'misc', {
