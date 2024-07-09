@@ -1,6 +1,5 @@
 {
   "name": "@gipo355/root",
-  "version": "1.1.0-next.3",
   "license": "MIT",
   "scripts": {
     "changeset": "changeset",
