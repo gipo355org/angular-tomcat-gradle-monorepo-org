@@ -14,7 +14,7 @@ plugins {
 	// alias(libs.plugins.foojayResolver)
 }
 
-rootProject.name = 'gipo355'
+rootProject.name = 'root'
 
 // NOTE: must manually include subprojects, this is not nx
 
