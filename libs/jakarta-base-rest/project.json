@@ -41,9 +41,6 @@
       "options": {
         "command": "docker-compose -f libs/jakarta-base-rest/compose.dev.yml up --no-recreate --watch & nodemon --watch libs/jakarta-base-rest/src --ext '.java' --exec './gradlew :libs:jakarta-base-rest:war'"
       }
-    },
-    "nx-release-publish": {
-      "command": "echo \"publishing\""
     }
   }
 }
