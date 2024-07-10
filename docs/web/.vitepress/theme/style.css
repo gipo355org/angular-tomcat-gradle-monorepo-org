@@ -8,7 +8,7 @@
  *
  * Each colors have exact same color scale system with 3 levels of solid
  * colors with different brightness, and 1 soft color.
- * 
+ *
  * - `XXX-1`: The most solid color used mainly for colored text. It must
  *   satisfy the contrast ratio against when used on top of `XXX-soft`.
  *
@@ -43,27 +43,23 @@
  *   in custom container, badges, etc.
  * -------------------------------------------------------------------------- */
 
- :root {
+:root {
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
-
   --vp-c-brand-1: var(--vp-c-indigo-1);
   --vp-c-brand-2: var(--vp-c-indigo-2);
   --vp-c-brand-3: var(--vp-c-indigo-3);
   --vp-c-brand-soft: var(--vp-c-indigo-soft);
-
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
   --vp-c-tip-3: var(--vp-c-brand-3);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
-
   --vp-c-warning-1: var(--vp-c-yellow-1);
   --vp-c-warning-2: var(--vp-c-yellow-2);
   --vp-c-warning-3: var(--vp-c-yellow-3);
   --vp-c-warning-soft: var(--vp-c-yellow-soft);
-
   --vp-c-danger-1: var(--vp-c-red-1);
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
@@ -92,12 +88,22 @@
 
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  );
 
+  /* --vp-home-hero-name-background: -webkit-linear-gradient( */
+
+  /*   120deg, */
+
+  /*   #bd34fe 30%, */
+
+  /*   #41d1ff */
+
+  /* ); */
+
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    #64dd17 30%,
+    /* This is the Gradle green */ #dd0031 /* This is the Angular red */
+  );
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
     #bd34fe 50%,
@@ -106,13 +112,13 @@
   --vp-home-hero-image-filter: blur(44px);
 }
 
-@media (min-width: 640px) {
+@media (width >=640px) {
   :root {
     --vp-home-hero-image-filter: blur(56px);
   }
 }
 
-@media (min-width: 960px) {
+@media (width >=960px) {
   :root {
     --vp-home-hero-image-filter: blur(68px);
   }
@@ -136,4 +142,3 @@
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
-
