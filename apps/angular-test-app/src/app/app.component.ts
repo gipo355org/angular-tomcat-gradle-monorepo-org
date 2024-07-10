@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AngularLibComponent } from '@gipo355/angular-lib';
-import { AngularLibThreeComponent } from '@gipo355/angular-lib-three';
+import { AngularLibThreeComponent } from '@gipo355/angular-lib-publish';
 
 import { NxWelcomeComponent } from './nx-welcome.component';
 

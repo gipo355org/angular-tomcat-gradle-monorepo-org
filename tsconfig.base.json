@@ -22,9 +22,7 @@
     "baseUrl": ".",
     "paths": {
       "@gipo355/angular-lib": ["libs/angular-lib/src/index.ts"],
-      "@gipo355/angular-lib-three": [
-        "libs/angular-lib-three/src/index.ts"
-      ]
+      "@gipo355/angular-lib-publish": ["libs/angular-lib-publish/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
