@@ -16,8 +16,11 @@
         "command": "./gradlew :libs:smispi:fix"
       }
     },
-    "nx-release-publish": {
+    "nx-release-publish-old": {
       "command": "./gradlew :libs:smispi:publishAndReleaseToMavenCentral --no-configuration-cache && ./gradlew :libs:smispi:publishAllPublicationsToGitHubPackagesRepository"
+    },
+    "nx-release-publish": {
+      "command": "./gradlew :libs:smispi:publishAndReleaseToMavenCentral --no-configuration-cache"
     }
   }
 }
