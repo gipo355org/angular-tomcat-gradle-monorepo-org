@@ -75,8 +75,8 @@ jobs:
         if: steps.changesets.outputs.hasChangesets == 'false'
         run: |
           npx changeset tag
-          git push --follow-tags
           npx nx release publish
+          git push --follow-tags
         shell: bash
         env:
           # NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
