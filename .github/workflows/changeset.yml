@@ -66,9 +66,9 @@ jobs:
           #   ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_USERNAME }}
           #   ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_PASSWORD }}
       # print environment info
-      - name: Print Environment Info step
-        run: npx nx report
-        shell: bash
+      # - name: Print Environment Info step
+      #   run: npx nx report
+      #   shell: bash
       # publish release
       # example 1
       - name: Create tags, Publish packages
