@@ -1,5 +1,11 @@
 # @gipo355/angular-lib-publish
 
+## 1.0.0-dev.1
+
+### Major Changes
+
+- 6a424ee: test bump in pre
+
 ## 0.0.5-dev.0
 
 ### Patch Changes

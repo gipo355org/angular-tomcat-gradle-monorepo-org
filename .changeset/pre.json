@@ -11,6 +11,7 @@
     "@gipo355/smispi": "1.1.3"
   },
   "changesets": [
-    "dirty-turkeys-dance"
+    "dirty-turkeys-dance",
+    "little-onions-tickle"
   ]
 }
