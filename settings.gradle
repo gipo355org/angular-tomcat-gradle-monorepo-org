@@ -22,77 +22,42 @@ rootProject.name = 'root'
 // avoid phantom dirs
 
 // parse apps and libs dirs and include them if they have a build.gradle in it
-fileTree('.').visit { FileVisitDetails details ->
-	if (details.file.isDirectory()) {
-		// TODO: check if not symbolic links
-		// isRegularFIle
-		// check if project.json is present
-		if (file("$details.file/build.gradle").exists()) {
-
-			// this will produce :appname, i want :dir:appname
-
-			include ":${details.file.parentFile.name}:${details.file.name}"
-			project(":${details.file.parentFile.name}:${details.file.name}").projectDir = details.file
-
-
-
-
-			// include ":${details.file.name}"
-			// project(":${details.file.name}").projectDir = details.file
-
-			// get the absolute path of the dir, remove the ./ prefix
-			// this will produce :dir:appname
-			// include ":${details.file.getCanonicalPath().substring(2)}"
-			// project(":${details.file.getCanonicalPath().substring(2)}").projectDir = details.file
-
-
-
-			// include ":${details.file.name}"
-			// project(":${details.file.name}").projectDir = details.file
-		}
-	}
-}
-// fileTree('./apps').visit { FileVisitDetails details ->
-// 	if (details.file.isDirectory()) {
-// 		if (file("$details.file/build.gradle").exists()) {
-// 			include ":${details.file.name}"
-// 			project(":${details.file.name}").projectDir = details.file
-// 		}
-// 	}
-// }
-
-// include all apps
-// fileTree('./apps').visit { FileVisitDetails details ->
-// 	if (details.file.isDirectory()) {
-// 		include ":${details.file.name}"
-// 		project(":${details.file.name}").projectDir = details.file
-// 	}
-// }
-
-// include all libs
-// fileTree('./libs').visit { FileVisitDetails details ->
-// 	if (details.file.isDirectory()) {
-// 		include ":${details.file.name}"
-// 		project(":${details.file.name}").projectDir = details.file
-// 	}
-// }
-
-
-
 // fileTree('.').visit { FileVisitDetails details ->
 // 	if (details.file.isDirectory()) {
+// 		// TODO: check if not symbolic links
+// 		// isRegularFIle
+// 		// check if project.json is present
 // 		if (file("$details.file/build.gradle").exists()) {
-// 			include ":${details.file.name}"
-// 			project(":${details.file.name}").projectDir = details.file
+//
+// 			// this will produce :appname, i want :dir:appname
+//
+// 			include ":${details.file.parentFile.name}:${details.file.name}"
+// 			project(":${details.file.parentFile.name}:${details.file.name}").projectDir = details.file
+//
+//
+//
+//
+// 			// include ":${details.file.name}"
+// 			// project(":${details.file.name}").projectDir = details.file
+//
+// 			// get the absolute path of the dir, remove the ./ prefix
+// 			// this will produce :dir:appname
+// 			// include ":${details.file.getCanonicalPath().substring(2)}"
+// 			// project(":${details.file.getCanonicalPath().substring(2)}").projectDir = details.file
+//
+//
+//
+// 			// include ":${details.file.name}"
+// 			// project(":${details.file.name}").projectDir = details.file
 // 		}
 // 	}
 // }
+//
 
-
-// include(':libs:smispi')
-// project(':libs:smispi').projectDir = file('libs/smispi')
-// include(':libs:jakarta-base-rest')
-// project(':libs:jakarta-base-rest').projectDir = file('libs/jakarta-base-rest')
+include(':libs:smispi')
+project(':libs:smispi').projectDir = file('libs/smispi')
+include(':libs:jakarta-base-rest')
+project(':libs:jakarta-base-rest').projectDir = file('libs/jakarta-base-rest')
 
 // sharing dependencies between subprojects
 // https://docs.gradle.org/current/userguide/platforms.html
