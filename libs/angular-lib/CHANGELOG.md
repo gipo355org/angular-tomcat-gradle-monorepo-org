@@ -1,5 +1,11 @@
 # @gipo355/angular-lib
 
+## 1.0.0
+
+### Minor Changes
+
+- b9e3e04: test major in pre
+
 ## 1.0.0-dev.2
 
 ### Minor Changes
