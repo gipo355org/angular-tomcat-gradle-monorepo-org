@@ -7,6 +7,9 @@ export default defineConfig({
   description:
     'A proof of concept monorepo using NX to orchestrate angular and java projects',
   themeConfig: {
+    search: {
+      provider: 'local',
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
