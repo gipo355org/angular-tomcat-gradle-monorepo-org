@@ -288,7 +288,7 @@ importers:
 
   libs/angular-lib: {}
 
-  libs/angular-lib-three:
+  libs/angular-lib-publish:
     dependencies:
       '@angular/common':
         specifier: ^18.0.0
