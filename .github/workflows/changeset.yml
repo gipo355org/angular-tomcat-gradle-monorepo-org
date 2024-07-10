@@ -34,8 +34,8 @@ jobs:
       - name: Setup CI Environment
         uses: ./.github/actions/ci-setup-node
         with:
-          install_scripts: false
-          install_playwright: false
+          install_scripts: 'false'
+          install_playwright: 'false'
       - name: create npmrc step
         run: |
           # cat << EOF > .npmrc "$HOME/.npmrc"

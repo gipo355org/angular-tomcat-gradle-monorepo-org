@@ -51,9 +51,12 @@ runs:
     # install nx cli
     - name: Install Playwright Browsers
       shell: bash
-      run:
-        if [[ "${{ inputs.install_playwright }}" == "true" ]]; then npx
-        playwright install --with-deps fi
+      run: |
+        if [[ "${{ inputs.install_playwright }}" == "true" ]]; then
+          npx playwright install --with-deps
+        else
+          echo "Skipping playwright installation"
+        fi
     - name: Install Nx CLI
       shell: bash
       run: npm install -g nx@latest
