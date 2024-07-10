@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/angular-tomcat-gradle-monorepo/',
   title: 'Angular Gradle Monorepo',
   description:
     'A proof of concept monorepo using NX to orchestrate angular and java projects',
