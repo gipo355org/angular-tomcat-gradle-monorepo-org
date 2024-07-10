@@ -14,7 +14,10 @@
     "lint-all": "tsx scripts/nx-run-many.ts run-many --lint --test --build",
     "lint-all-affected": "tsx scripts/nx-run-many.ts affected --lint --test --build --e2e",
     "fix-all": "tsx scripts/nx-run-many.ts run-many --fix",
-    "lint-affected": "tsx scripts/nx-run-many.ts affected --lint"
+    "lint-affected": "tsx scripts/nx-run-many.ts affected --lint",
+    "docs:dev": "vitepress dev docs/web",
+    "docs:build": "vitepress build docs/web",
+    "docs:preview": "vitepress preview docs/web"
   },
   "private": true,
   "dependencies": {
