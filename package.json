@@ -73,6 +73,7 @@
     "@typescript-eslint/eslint-plugin": "7.16.0",
     "@typescript-eslint/parser": "7.16.0",
     "@typescript-eslint/utils": "8.0.0-alpha.41",
+    "auto": "^11.1.6",
     "autoprefixer": "10.4.19",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
