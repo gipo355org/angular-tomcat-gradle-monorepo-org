@@ -1,12 +1,17 @@
 # Composite private action to setup the CI environment with all the tools needed for the project.
 # We could install pre-commit too here
 name: Setup CI
+description: 'Setup CI environment with all the tools needed for the project'
 inputs:
   install_scripts:
     description:
       'Whether to install scripts while installing node packages or not'
     required: false
-    default: true
+    default: 'true'
+  install_playwright:
+    description: 'Whether to install playwright browsers or not'
+    required: false
+    default: 'true'
 runs:
   using: composite
   steps:
@@ -46,7 +51,9 @@ runs:
     # install nx cli
     - name: Install Playwright Browsers
       shell: bash
-      run: npx playwright install --with-deps
+      run:
+        if [[ "${{ inputs.install_playwright }}" == "true" ]]; then npx
+        playwright install --with-deps fi
     - name: Install Nx CLI
       shell: bash
       run: npm install -g nx@latest
