@@ -16,6 +16,14 @@ jobs:
       id-token: write # to enable use of OIDC for npm provenance
       packages: write
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # npm token to publish nodejs libs
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE }}
+      ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSWORD }}
+      ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_USERNAME }}
+      ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_PASSWORD }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
@@ -47,41 +55,45 @@ jobs:
           # with publish, it will run the cmd if there are no changesets
           # publish: npx nx release publish
           # publish: pnpm ci:publish
-          publish: pnpm changeset-publish
+          # publish: pnpm changeset-publish
+          publish: false
+          # env:
+          #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #   # npm token to publish nodejs libs
+          #   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          #   ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE }}
+          #   ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSWORD }}
+          #   ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_USERNAME }}
+          #   ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_PASSWORD }}
+      # print environment info
+      - name: Print Environment Info step
+        run: npx nx report
+        shell: bash
+      # publish release
+      # example 1
+      - name: Create tags, Publish packages
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: |
+          npx changeset tag
+          git push --follow-tags
+          npx nx release publish
+        shell: bash
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # npm token to publish nodejs libs
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE }}
-          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSWORD }}
-          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_USERNAME }}
-          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_PASSWORD }}
-# print environment info
-# - name: Print Environment Info step
-#   run: npx nx report
-#   shell: bash
-# publish release
-# example 1
-# - name: Publish packages
-#   if: steps.changesets.outputs.hasChangesets == 'false'
-#   run: npx nx release publish
-#   shell: bash
-#   env:
-#     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-#     NPM_CONFIG_PROVENANCE: true # works only if repo is public
-# example 2
-# - name: Publish Release step
-#   if: steps.changesets.outputs.hasChangesets == 'false'
-#   run: echo "publishing"
-#   # run: pnpm ci:publish
-#   # run: nx release publish
-#   # NX   Running target nx-release-publish for 3 projects:
-# notify
-# - name: Send a Slack notification if a publish happens step
-#   if: steps.changesets.outputs.published == 'true'
-# You can do something when a publish happens.
-# also have access to the published packages
-# steps.changesets.outputs.publishedPackages == [{"name": "@xx/xx", "version": "1.2.0"}, {"name": "@xx/xy", "version": "0.8.9"}]
-# run: echo "A new version of ${GITHUB_REPOSITORY} was published!"
-# my-slack-bot send-notification --message "A new version of
-# ${GITHUB_REPOSITORY} was published!"
+          # NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true # works only if repo is public
+    # example 2
+    # - name: Publish Release step
+    #   if: steps.changesets.outputs.hasChangesets == 'false'
+    #   run: echo "publishing"
+    #   # run: pnpm ci:publish
+    #   # run: nx release publish
+    #   # NX   Running target nx-release-publish for 3 projects:
+    # notify
+    # - name: Send a Slack notification if a publish happens step
+    #   if: steps.changesets.outputs.published == 'true'
+    # You can do something when a publish happens.
+    # also have access to the published packages
+    # steps.changesets.outputs.publishedPackages == [{"name": "@xx/xx", "version": "1.2.0"}, {"name": "@xx/xy", "version": "0.8.9"}]
+    # run: echo "A new version of ${GITHUB_REPOSITORY} was published!"
+    # my-slack-bot send-notification --message "A new version of
+    # ${GITHUB_REPOSITORY} was published!"
