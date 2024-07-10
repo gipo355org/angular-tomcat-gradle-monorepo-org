@@ -7,7 +7,11 @@
     }
   ],
   "commit": false,
-  "fixed": [["*/angular-lib*"]],
+  "fixed": [
+    [
+      "*/angular-lib*"
+    ]
+  ],
   "linked": [],
   "access": "restricted",
   "baseBranch": "main",
