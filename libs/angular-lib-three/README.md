@@ -1,6 +1,6 @@
 # angular-lib-three
 
-This library was generated with [Nx](https://nx.dev).
+this is a published lib, must be available in the registry
 
 ## Running unit tests
 
