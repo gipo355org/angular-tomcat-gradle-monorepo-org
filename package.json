@@ -2,7 +2,7 @@
   "name": "@gipo355/root",
   "license": "MIT",
   "scripts": {
-    "changeset": "changeset",
+    "changeset": "changeset --open",
     "format-root-gradle": "./gradlew :spotlessApply",
     "changeset-publish": "changeset publish && nx release publish",
     "prepare": "tsx scripts/install-hooks.ts",
