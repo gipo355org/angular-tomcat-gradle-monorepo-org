@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'angular-lib-three',
+  displayName: 'angular-lib-publish',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/libs/angular-lib-three',
+  coverageDirectory: '../../coverage/libs/angular-lib-publish',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

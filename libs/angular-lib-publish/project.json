@@ -1,7 +1,7 @@
 {
-  "name": "angular-lib-three",
+  "name": "angular-lib-publish",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/angular-lib-three/src",
+  "sourceRoot": "libs/angular-lib-publish/src",
   "prefix": "lib",
   "projectType": "library",
   "tags": [],
@@ -12,14 +12,14 @@
         "{workspaceRoot}/{projectRoot}/dist"
       ],
       "options": {
-        "project": "libs/angular-lib-three/ng-package.json"
+        "project": "libs/angular-lib-publish/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/angular-lib-three/tsconfig.lib.prod.json"
+          "tsConfig": "libs/angular-lib-publish/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/angular-lib-three/tsconfig.lib.json"
+          "tsConfig": "libs/angular-lib-publish/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -30,7 +30,7 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "libs/angular-lib-three/jest.config.ts"
+        "jestConfig": "libs/angular-lib-publish/jest.config.ts"
       }
     },
     "fix": {

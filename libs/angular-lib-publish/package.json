@@ -1,5 +1,5 @@
 {
-  "name": "@gipo355/angular-lib-three",
+  "name": "@gipo355/angular-lib-publish",
   "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^18.0.0",
@@ -14,6 +14,6 @@
   "license": "MIT",
   "repository": {
     "url": "https://github.com/gipo355/angular-tomcat-gradle-monorepo",
-    "directory": "libs/angular-lib-three"
+    "directory": "libs/angular-lib-publish"
   }
 }

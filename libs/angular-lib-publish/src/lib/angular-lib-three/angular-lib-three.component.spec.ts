@@ -1,7 +1,7 @@
 import type { ComponentFixture } from '@angular/core/testing';
 import { TestBed } from '@angular/core/testing';
 
-import { AngularLibThreeComponent } from './angular-lib-three.component';
+import { AngularLibThreeComponent } from './angular-lib-publish.component';
 
 describe('AngularLibThreeComponent', () => {
   let component: AngularLibThreeComponent;
