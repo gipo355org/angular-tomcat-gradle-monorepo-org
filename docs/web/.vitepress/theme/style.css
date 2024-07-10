@@ -99,15 +99,21 @@
 
   /* ); */
 
-  --vp-home-hero-name-background: linear-gradient(
-    120deg,
-    #64dd17 30%,
-    /* This is the Gradle green */ #dd0031 /* This is the Angular red */
-  );
+  --vp-home-hero-name-background: linear-gradient(120deg, #64dd17 30%, #dd0031);
+
+  /* --vp-home-hero-image-background-image: linear-gradient( */
+
+  /*   -45deg, */
+
+  /*   #bd34fe 50%, */
+
+  /*   #47caff 50% */
+
+  /* ); */
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
-    #bd34fe 50%,
-    #47caff 50%
+    #64dd17 50%,
+    #dd0031 50%
   );
   --vp-home-hero-image-filter: blur(44px);
 }
