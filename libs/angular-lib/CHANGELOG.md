@@ -1,5 +1,11 @@
 # @gipo355/angular-lib
 
+## 1.0.1-dev.0
+
+### Patch Changes
+
+- d2b3156: test tag
+
 ## 1.0.0
 
 ### Minor Changes

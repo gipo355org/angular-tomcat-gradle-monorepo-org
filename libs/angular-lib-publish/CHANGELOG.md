@@ -1,5 +1,11 @@
 # @gipo355/angular-lib-publish
 
+## 1.0.1-dev.0
+
+### Patch Changes
+
+- 6dc2743: added pre enter commit for dev branch
+
 ## 1.0.0
 
 ### Major Changes

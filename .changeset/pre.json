@@ -10,5 +10,8 @@
     "@gipo355/jakarta-base-rest": "0.0.1",
     "@gipo355/smispi": "1.1.3"
   },
-  "changesets": []
+  "changesets": [
+    "angry-laws-jam",
+    "modern-buttons-hear"
+  ]
 }
