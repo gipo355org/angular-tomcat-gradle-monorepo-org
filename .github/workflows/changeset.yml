@@ -57,7 +57,6 @@ jobs:
           # publish: npx nx release publish
           # publish: pnpm ci:publish
           # publish: pnpm changeset-publish
-          publish: false
           # env:
           #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           #   # npm token to publish nodejs libs
