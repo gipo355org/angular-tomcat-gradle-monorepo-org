@@ -1,5 +1,11 @@
 # @gipo355/angular-lib-publish
 
+## 0.0.5-dev.0
+
+### Patch Changes
+
+- 12eb7d6: test bump in pre
+
 ## 0.0.4
 
 ### Patch Changes
