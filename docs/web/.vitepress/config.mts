@@ -64,7 +64,6 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the MIT License. Created with vitepress.',
-      copyright: 'Copyright © 2019-present Evan You',
     },
 
     socialLinks: [
