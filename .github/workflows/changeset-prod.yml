@@ -62,3 +62,6 @@ jobs:
       # when it's merged, trigger the release workflow for the stable channel
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6.1.0
+        with:
+          branch: changeset-release/main
+          base: origin/main
