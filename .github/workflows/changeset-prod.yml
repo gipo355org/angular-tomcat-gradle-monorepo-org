@@ -49,8 +49,11 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Handle production PR
         run: |
+          # enter exit mode
           pnpm changeset pre exit
+          # change base branch to target main
           pnpm tsx ./scripts/release/changeset.ts
+          git commit -m "chore: exit pre release mode" --no-verify
       - name: Create Release Pull Request step
         uses: changesets/action@v1
         id: changesets
