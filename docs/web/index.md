@@ -13,7 +13,7 @@ hero:
       link: /intro/getting-started
     - theme: alt
       text: Documentation
-      link: /docs/start
+      link: /docs/intro
 
 features:
   - icon: 🚀

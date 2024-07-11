@@ -13,7 +13,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/docs/start' },
+      { text: 'Docs', link: '/docs/intro' },
       // { text: 'Examples', link: '/markdown-examples' },
       // { text: 'Examples', link: '/examples/markdown-examples' },
     ],
@@ -28,7 +28,28 @@ export default defineConfig({
       },
       {
         text: 'Docs',
-        items: [{ text: 'Start', link: '/docs/start' }],
+        items: [
+          {
+            text: 'Intro',
+            link: '/docs/intro',
+          },
+          {
+            text: 'Nx',
+            items: [{ text: 'Start', link: '/docs/nx/start' }],
+          },
+          {
+            text: 'Gradle',
+            items: [{ text: 'Start', link: '/docs/gradle/start' }],
+          },
+          {
+            text: 'Releases',
+            items: [{ text: 'Start', link: '/docs/releases/start' }],
+          },
+          {
+            text: 'Actions',
+            items: [{ text: 'Start', link: '/docs/actions/start' }],
+          },
+        ],
       },
       {
         text: 'Examples',
