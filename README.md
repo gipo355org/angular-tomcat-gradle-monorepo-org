@@ -29,6 +29,8 @@ tomcat rewrite rules for angular
 
 ## Contributors
 
+[add yourself](https://allcontributors.org/docs/en/bot/usage)
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
