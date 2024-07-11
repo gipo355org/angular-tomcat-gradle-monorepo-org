@@ -53,6 +53,8 @@ jobs:
           pnpm changeset pre exit
           # change base branch to target main
           pnpm tsx ./scripts/release/changeset.ts
+          git config --global user.email "github-actions[bot]"
+          git config --global user.name "github-actions[bot]"
           git commit -m "chore: exit pre release mode" --no-verify
       - name: Create Release Pull Request step
         uses: changesets/action@v1
