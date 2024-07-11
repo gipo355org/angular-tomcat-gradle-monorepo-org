@@ -1,4 +1,4 @@
-![All Contributors](https://img.shields.io/github/all-contributors/gipo355/angular-tomcat-gradle-monorepo?color=ee8449&style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/github/all-contributors/gipo355/angular-tomcat-gradle-monorepo?color=ee8449&style=flat-square)](##contributors)
 
 # Angular Tomcat Gradle Monorepo
 
