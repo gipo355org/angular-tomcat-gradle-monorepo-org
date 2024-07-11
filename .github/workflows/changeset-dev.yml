@@ -52,7 +52,7 @@ jobs:
       # else it will publish if specified
       - name: Handle prerelease
         run: |
-          npx changeset pre enter dev
+          npx changeset pre enter dev || true
       - name: Create Release Pull Request step
         uses: changesets/action@v1
         id: changesets
