@@ -2,7 +2,7 @@
 #
 # this action will prepare rolling PRs into dev for the dev channel release
 #
-name: Release Workflow
+name: Release Workflow for dev channel
 on:
   push:
     branches:
@@ -50,19 +50,9 @@ jobs:
       # create release pull request
       # this action will create a pull request with all the changesets if there are any in the base branch
       # else it will publish if specified
-      - name: Handle prerelease and production
+      - name: Handle prerelease
         run: |
-          if [[ ${{ github.ref }} == refs/heads/dev ]]; then
-            echo "dev branch"
-            # make sure we are in prerelease mode
-            npx changeset pre enter dev
-          elif [[ ${{ github.ref }} == refs/heads/main ]]; then
-            echo "main branch"
-            # exit prerelease mode and open a pr on main
-            # npx changeset pre exit
-          else
-            echo "other branch"
-          fi
+          npx changeset pre enter dev
       - name: Create Release Pull Request step
         uses: changesets/action@v1
         id: changesets

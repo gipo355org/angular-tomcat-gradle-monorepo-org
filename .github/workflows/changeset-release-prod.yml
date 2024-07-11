@@ -1,15 +1,10 @@
+# this action will prepare rolling PRs into dev for the dev channel release
 #
-# this action prepares a PR on the main branch for a stable channel release
-#
-# merging this PR will trigger the release workflow for the stable channel
-#
-# todo: change base branch to main
-#
-name: Release Workflow for stable channel
+name: Release Workflow for dev channel
 on:
   push:
     branches:
-      - dev
+      - main
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
@@ -47,10 +42,6 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Handle production PR
-        run: |
-          npx changeset pre exit
-          pnpm tsx scripts/release/changesets.ts
       - name: Create Release Pull Request step
         uses: changesets/action@v1
         id: changesets
