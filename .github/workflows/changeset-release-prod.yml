@@ -1,4 +1,4 @@
-# this action will prepare rolling PRs into dev for the dev channel release
+# this action will handle release once the PR is merged into main
 #
 name: Release Workflow for dev channel
 on:

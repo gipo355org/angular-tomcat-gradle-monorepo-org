@@ -49,8 +49,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Handle production PR
         run: |
-          npx changeset pre exit
-          pnpm tsx scripts/release/changesets.ts
+          pnpm changeset pre exit
+          pnpm tsx ./scripts/release/changeset.ts
       - name: Create Release Pull Request step
         uses: changesets/action@v1
         id: changesets
