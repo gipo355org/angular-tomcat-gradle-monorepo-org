@@ -52,21 +52,13 @@ jobs:
           # enter exit mode
           pnpm changeset pre exit
           # change base branch to target main
-          pnpm tsx ./scripts/release/changeset.ts
+          # pnpm tsx ./scripts/release/changeset.ts
+          pnpm changeset version
           git config --global user.email "github-actions[bot]"
           git config --global user.name "github-actions[bot]"
-          git add .
-          git commit -m "chore: exit pre release mode" --no-verify
-      - name: Create Release Pull Request step
-        uses: changesets/action@v1
-        id: changesets
-        with:
-          commit: 'chore: changeset release (main)'
-          title: 'chore: changeset release (main)'
-    # - name: Create tags, Publish packages
-    #   if: steps.changesets.outputs.hasChangesets == 'false'
-    #   run: |
-    #     npx changeset tag
-    #     git push --follow-tags
-    #     npx nx release publish
-    #   shell: bash
+          # git add .
+          # git commit -m "chore: exit pre release mode" --no-verify
+      # open a PR to merge changes into main
+      # when it's merged, trigger the release workflow for the stable channel
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6.1.0
