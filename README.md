@@ -1,32 +1,19 @@
-# AngularTomcatGradleMonorepo
+![All Contributors](https://img.shields.io/github/all-contributors/gipo355/angular-tomcat-gradle-monorepo?color=ee8449&style=flat-square)](#contributors)
 
-[![All Contributors](https://img.shields.io/github/all-contributors/gipo355/angular-tomcat-gradle-monorepo?color=ee8449&style=flat-square)](#contributors)
+# Angular Tomcat Gradle Monorepo
+
+A repository to experiment with a multilanguage monorepo with Angular, Java and
+NX
 
 ## Documentation
 
 See the
 [documentation](https://gipo355.github.io/angular-tomcat-gradle-monorepo/)
 
-## Old to remove
-
-monorepo with Angular, Tomcat and Gradle
-
-can run nx commands from root folder, tasks for each project.json available
+## Old
 
 can use gradle monorepo commands directly:
 `./gradlew :<folder>:<project>:<task>`
-
-ideally we want to use nx for everything
-
-## most difficult parts
-
-versioning
-
-publishing
-
-bundling tomcat with angular
-
-## brainstorming
 
 tomcat rewrite rules for angular
 
