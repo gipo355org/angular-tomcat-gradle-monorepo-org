@@ -61,12 +61,12 @@ jobs:
         uses: changesets/action@v1
         id: changesets
         with:
-          commit: 'chore: changeset release'
-          title: 'chore: changeset release'
-      - name: Create tags, Publish packages
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        run: |
-          npx changeset tag
-          git push --follow-tags
-          npx nx release publish
-        shell: bash
+          commit: 'chore: changeset release (main)'
+          title: 'chore: changeset release (main)'
+    # - name: Create tags, Publish packages
+    #   if: steps.changesets.outputs.hasChangesets == 'false'
+    #   run: |
+    #     npx changeset tag
+    #     git push --follow-tags
+    #     npx nx release publish
+    #   shell: bash
