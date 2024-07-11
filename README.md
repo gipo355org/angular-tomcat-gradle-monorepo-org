@@ -23,7 +23,7 @@ tomcat rewrite rules for angular
 
 ## Contributors
 
-[add yourself](https://allcontributors.org/docs/en/bot/usage)
+Thanks goes to these wonderful people (emoji key):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -45,3 +45,5 @@ tomcat rewrite rules for angular
 This project follows the
 [all-contributors](https://github.com/kentcdodds/all-contributors)
 specification, contributions of any kind welcome!
+
+[add yourself](https://allcontributors.org/docs/en/bot/usage)
