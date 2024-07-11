@@ -65,3 +65,5 @@ jobs:
         with:
           branch: changeset-release/main
           base: origin/main
+          title: 'chore: changeset release (main)'
+          commit-message: 'chore: changeset release (main)'
