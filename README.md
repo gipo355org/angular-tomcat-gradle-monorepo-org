@@ -46,3 +46,7 @@ tomcat rewrite rules for angular
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the
+[all-contributors](https://github.com/kentcdodds/all-contributors)
+specification, contributions of any kind welcome!
