@@ -2,6 +2,13 @@
 
 [![All Contributors](https://img.shields.io/github/all-contributors/gipo355/angular-tomcat-gradle-monorepo?color=ee8449&style=flat-square)](#contributors)
 
+## Documentation
+
+See the
+[documentation](https://gipo355.github.io/angular-tomcat-gradle-monorepo/)
+
+## Old to remove
+
 monorepo with Angular, Tomcat and Gradle
 
 can run nx commands from root folder, tasks for each project.json available
