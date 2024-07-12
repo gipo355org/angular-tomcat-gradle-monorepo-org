@@ -4,7 +4,8 @@
   "scripts": {
     "changeset": "changeset",
     "format-root-gradle": "./gradlew :spotlessApply",
-    "changeset-publish": "changeset publish && nx release publish",
+    "changeset-publish-old": "changeset publish && nx release publish",
+    "changeset-publish": "changeset tag && git push --follow-tags && nx release publish",
     "prepare": "tsx scripts/install-hooks.ts",
     "preinstall": "npx only-allow pnpm",
     "clear-all": "tsx scripts/clear.ts",

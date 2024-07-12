@@ -66,9 +66,7 @@ jobs:
           #
           # If it has a publish command, it will create a github release when no
           # changesets are present
-          publish:
-            npx changeset tag && git push --follow-tags && npx nx release
-            publish
+          publish: pnpm changeset-publish
           #
           #
           # env:
