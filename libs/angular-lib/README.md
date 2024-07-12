@@ -8,3 +8,5 @@ package.json private is set to true
 Run `nx test angular-lib` to execute the unit tests.
 
 test tag private package
+
+test
