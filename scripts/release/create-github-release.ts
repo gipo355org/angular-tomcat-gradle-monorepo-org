@@ -1,9 +1,11 @@
-// import { getPackages, type Package } from '@manypkg/get-packages';
-// import { GitHub, getOctokitOptions } from '@actions/github/lib/utils';
-import { Octokit } from 'octokit';
+// 🔨 WIP: copied from changesets action
+import fs from 'node:fs/promises';
 // import { throttling } from '@octokit/plugin-throttling';
 // import * as semver from 'semver';
 import path from 'node:path';
+// import { getPackages, type Package } from '@manypkg/get-packages';
+// import { GitHub, getOctokitOptions } from '@actions/github/lib/utils';
+import { Octokit } from 'octokit';
 
 // this code is adapted from `@changesets/action` and `nx release` to be able to create a release
 // even without using `changesets publish` command
@@ -85,11 +87,14 @@ const createRelease = async (
   { pkg, tagName }: { pkg: Package; tagName: string },
 ) => {
   try {
-    let changelogFileName = path.join(pkg.dir, 'CHANGELOG.md');
+    const changelogFileName = path.join(pkg.dir, 'CHANGELOG.md');
 
-    let changelog = await fs.readFile(changelogFileName, 'utf8');
+    const changelog = await fs.readFile(changelogFileName, 'utf8');
 
-    let changelogEntry = getChangelogEntry(changelog, pkg.packageJson.version);
+    const changelogEntry = getChangelogEntry(
+      changelog,
+      pkg.packageJson.version,
+    );
     if (!changelogEntry) {
       // we can find a changelog but not the entry for this version
       // if this is true, something has probably gone wrong
