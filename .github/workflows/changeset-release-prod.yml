@@ -1,5 +1,8 @@
 # this action will handle release once the PR is merged into main
 #
+# TODO: missing an important part of the workflow:
+# riconciliation into dev after exiting pre mode
+#
 name: Release Workflow for dev channel
 on:
   push:
