@@ -13,7 +13,10 @@ hero:
       link: /intro/getting-started
     - theme: alt
       text: Documentation
-      link: /docs/intro
+      link: /docs/nx
+    - theme: alt
+      text: Reports
+      link: /docs/reports
 
 features:
   - icon: 🚀

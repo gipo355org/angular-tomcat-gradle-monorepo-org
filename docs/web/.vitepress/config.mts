@@ -14,7 +14,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/docs/intro' },
-      { text: 'Reports', link: '/reports/' },
+      { text: 'Reports', link: '/docs/reports/' },
       // { text: 'Examples', link: '/markdown-examples' },
       // { text: 'Examples', link: '/examples/markdown-examples' },
     ],
@@ -30,25 +30,38 @@ export default defineConfig({
       {
         text: 'Docs',
         items: [
-          {
-            text: 'Intro',
-            link: '/docs/intro',
-          },
+          // example of nested items
+          // {
+          //   text: 'Nx',
+          //   items: [{ text: 'Start', link: '/docs/nx' }],
+          // },
           {
             text: 'Nx',
-            items: [{ text: 'Start', link: '/docs/nx/start' }],
+            link: '/docs/nx',
           },
           {
             text: 'Gradle',
-            items: [{ text: 'Start', link: '/docs/gradle/start' }],
+            link: '/docs/gradle',
           },
           {
             text: 'Releases',
-            items: [{ text: 'Start', link: '/docs/releases/start' }],
+            link: '/docs/releases',
           },
           {
             text: 'Actions',
-            items: [{ text: 'Start', link: '/docs/actions/start' }],
+            link: '/docs/actions',
+          },
+          {
+            text: 'Reports',
+            link: '/docs/reports',
+          },
+          {
+            text: 'Security',
+            link: '/docs/security',
+          },
+          {
+            text: 'Other tools',
+            link: '/docs/other-tools',
           },
         ],
       },
