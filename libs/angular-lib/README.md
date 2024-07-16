@@ -7,3 +7,5 @@ package.json private is set to true
 add comment to test merge que
 
 add comment pr 2 to test merge conflict
+
+add conflict on pr1
