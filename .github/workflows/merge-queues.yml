@@ -1,0 +1,22 @@
+# https://medium.com/@kojoru/how-to-set-up-merge-queues-in-github-actions-59381e5f435a
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#merge_group
+# https://buildkite.com/docs/tutorials/github-merge-queue
+# https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue
+# https://mergify.com/merge-queue
+name: Validate code in the merge queue
+on:
+  merge_group:
+jobs:
+  LintTestBuild:
+    runs-on: ubuntu-latest
+    name: Lint Test Build Job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Display info
+        run: |
+          pwd
+          tree -a -I '.git'
+          git status
+      - name: Run slow CI (emulated by a long sleep)
+        run: sleep 300
